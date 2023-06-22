@@ -1,0 +1,30 @@
+<nav>
+    <img src="../../../assets/images/logo.png" alt="">
+    <ul>
+        <li>
+            <a routerLink="" (click)="clickEvent('accueil')" [ngClass]="status === 'accueil' ? 'active' : ''">
+                Accueil
+            </a>
+        </li>
+        <li>
+            <a routerLink="classement" (click)="clickEvent('classement')" [ngClass]="status === 'classement' ? 'active' : ''">
+                Classement
+            </a>
+        </li>
+        <li>
+            <a routerLink="profile" (click)="clickEvent('profile')" [ngClass]="status === 'profile' ? 'active' : ''">
+                Profile
+            </a>
+        </li>
+        <li>
+            <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
+                Jeux
+            </a>
+        </li>
+        <li>
+            <a routerLink="moncompte" (click)="clickEvent('moncompte')" [ngClass]="status === 'moncompte' ? 'active' : ''">
+                Mon Compte
+            </a>
+        </li>
+    </ul>
+</nav>
