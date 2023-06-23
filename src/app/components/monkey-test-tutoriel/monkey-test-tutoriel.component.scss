@@ -2,6 +2,11 @@
     display: flex;
 }
 
+#main {
+    display: flex;
+    margin-right:5%;
+}
+
 h1 {
     margin-top: 1%;
     font-weight: bold;
@@ -21,6 +26,7 @@ h1 {
 
 .tutoriel {
     display: flex;
+    // width: 50%;
     margin-left: 4%;
     margin-right: 4%;
     margin-top: 40px;
@@ -32,14 +38,36 @@ img {
     padding-right: 60px;
 }
 
+// texte
 .text {
-    display:flex;
+    display: flex;
 }
 
 .paragraphs {
     text-align: justify;
 }
 
+// flèches du carrousel pour changer de vignettes
+.fleche {
+    border: solid black;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.droite {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-right: 10px;
+}
+
+.gauche {
+    margin-left: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+// bouton
 button {
     background-color: #151730;
     border: none;
@@ -54,11 +82,51 @@ button {
 button:hover {
     color: #151730;
     background-color: #488ECB;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 button:active {
     color: #151730;
     background-color: #FFD458;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vignettes {
+    display: flex;
+    align-items: center;
+    padding: 15% 1%;
+    // padding-left: 10%;
+    // padding-right: 10%;
+    // padding-top: 5%;
+    margin-right: 2.5%;
+    border: 4px solid #151730;
+    border-radius: 10px;
+}
+
+.vignette1 {
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+}
+
+.vignette1-line1 {
+    justify-content: space-between;
+}
+
+.vignette1-line2 {
+    justify-content: space-around;
+}
+
+.tirage {
+    border: 4px solid #151730;
+    padding: 50px 50px;
+    font-size: large;
+    margin: 5px 30%;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background: #151730;
+    border-radius: 50%;
 }
