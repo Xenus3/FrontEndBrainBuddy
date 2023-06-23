@@ -1,0 +1,63 @@
+<div class="form">
+    <div class="form2">
+        <form action="" class="formulaire" [formGroup]="connexionForm" (ngSubmit)="connexion()">
+            <h2>Se Connecter</h2>
+            <div class="forelem">
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" formControlName="email">
+            </div>
+            <span class="alerte" *ngIf="connexionForm.controls['email'].errors?.['required']">
+                Champ Requis
+            </span>
+            <div class="forelem">
+                <label for="mdp">Mot de Passe:</label>
+                <input type="text" id="mdp" formControlName="motdepasse">
+            </div>
+            <span class="alerte" *ngIf="connexionForm.controls['motdepasse'].errors?.['required']">
+                Champ Requis
+            </span>
+            <div class="forelem">
+                <input type="checkbox" id="souvienttoi">
+                <label for="souvienttoi" id="souvientlabel">Souvient toi</label><br>
+            </div>
+            <button type="submit" [disabled]="!connexionForm.valid">Connexion</button>
+            <p><a href="">Mot de passe oublié?</a></p>
+        </form>
+    </div>
+    <div class="form2">
+        <form action="" class="formulaire" id="form3" [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
+            <h2>S'inscrire</h2>
+            <div class="forelem">
+                <label for="nom">Nom:</label>
+                <input type="text" id="email" formControlName="nom">
+                
+            </div>
+            <span class="alerte" *ngIf="inscriptionForm.controls['nom'].errors?.['required']">
+                Champ Requis
+            </span>
+            <div class="forelem">
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" formControlName="email">
+            </div>
+            <span class="alerte" *ngIf="inscriptionForm.controls['email'].errors?.['required']">
+                Champ Requis
+            </span>
+            <div class="forelem">
+                <label for="mdp">Mot de Passe:</label>
+                <input type="password" id="mdp" formControlName="motdepasse">
+            </div>
+            <span class="alerte" *ngIf="inscriptionForm.controls['motdepasse'].errors?.['required']">
+                doit contenir 8 characteres, 1 majuscule, 1 chiffre et 1 charactere speciale
+            </span>
+            <div class="forelem">
+                <label for="email">Confirmation:</label>
+                <input type="password" id="email" formControlName="confirmation">
+            </div>
+            <span class="alerte" *ngIf="inscriptionForm.controls['confirmation'].errors?.['required']">
+                Champ Requis
+            </span>
+            <button type="submit" [disabled]="!inscriptionForm.valid">Inscription</button>
+        </form>
+
+    </div>
+</div>
