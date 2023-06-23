@@ -8,13 +8,21 @@ import { HeaderComponent } from './components/header/header.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
+
+import { ProfilemenuComponent } from './components/profilemenu/profilemenu.component';
+import { DonneepersoComponent } from './components/donneeperso/donneeperso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AccueilComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    ProfileComponent,
+    
+    ProfilemenuComponent,
+          DonneepersoComponent
   ],
   imports: [
     BrowserModule,
