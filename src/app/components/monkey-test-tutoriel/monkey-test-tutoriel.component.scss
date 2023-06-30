@@ -47,12 +47,14 @@ h1 {
 
 #triangle-gauche:hover {
     border-right: 1vw solid #919191;
+    cursor: pointer;
 }
 
 #triangle-droit {
     border-top: 2vh solid transparent;
     border-left: 1vw solid #FFF8F8;
     border-bottom: 2vh solid transparent;
+    cursor: pointer;
 }
 
 #triangle-droit:hover {
@@ -91,6 +93,7 @@ button:active {
     margin-left: 4%;
     margin-right: 4%;
     width:95%;
+    overflow: hidden;
 }
 
 .slider {
@@ -106,7 +109,7 @@ button:active {
 }
 
 // Vignettes 
-.vignettes {
+.slides {
     // display: flex;
     // flex-direction: row;
     width: 30vw;
@@ -180,4 +183,10 @@ button:active {
 
 .circle-inactive {
     background: #B1B1B3;
+    cursor: pointer;
+}
+
+.circle-inactive:hover {
+    background: #488ECB;
+    cursor: pointer;
 }
