@@ -1,0 +1,33 @@
+.donnee {
+    display:flex;
+    
+}
+
+.donnee img {
+    height: 200px;
+    border: solid black 2px;
+    border-radius: 10px ;
+}
+
+button {
+    border: none;
+    background-color: #a2c0d2 ;
+    text-align: center;
+    margin: auto auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.donnee ul {
+    list-style: none;
+    font-size: 32px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+    padding-left: 100px;
+}
+

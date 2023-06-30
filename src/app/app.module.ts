@@ -9,12 +9,25 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { MonkeyTestTutorielComponent } from './components/monkey-test-tutoriel/monkey-test-tutoriel.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
+
+import { ProfilemenuComponent } from './components/profilemenu/profilemenu.component';
+import { DonneepersoComponent } from './components/donneeperso/donneeperso.component';
+import { HistoriqueComponent } from './components/historique/historique.component';
+import { TrophesComponent } from './components/trophes/trophes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AccueilComponent,
+    ConnexionComponent,
+    ProfileComponent,
+    
+    ProfilemenuComponent,
+          DonneepersoComponent,
+          HistoriqueComponent,
+          TrophesComponent,
     MonkeyTestTutorielComponent,
     ConnexionComponent
   ],
