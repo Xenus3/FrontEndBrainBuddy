@@ -25,8 +25,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-
-
 img {
     width: 40vw;
     padding-right: 60px;
@@ -43,23 +41,39 @@ img {
 }
 
 // flèches du carrousel pour changer de vignettes
-.fleche {
-    border: solid black;
-    border-width: 0 7px 7px 0;
-    display: inline-block;
-    padding: 3px;
+
+// .triangle-gauche {
+//     width: 0px;
+//     height: 0px;
+//     border-style: solid;
+//     border-width: 70vw 123px 70% 0;
+//     border-color: transparent #FFF8F8 transparent transparent;
+//     transform: rotate(0deg);
+//  }
+
+//  .triangle-droite {
+//     width: 0px;
+//     height: 0px;
+//     border-style: solid;
+//     border-width: 96px 0 96px 123px;
+//     border-color: transparent transparent transparent #FFF8F8;
+//     transform: rotate(0deg);
+//  }
+
+.triangle-parent {
+    position: relative;
 }
 
-.droite {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin-right: 10px;
+#triangle-gauche {
+    border-top: 2vh solid transparent;
+    border-right: 2vw solid #FFF8F8;
+    border-bottom: 2vh solid transparent;
 }
 
-.gauche {
-    margin-left: 10px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+#triangle-droit {
+    border-top: 2vh solid transparent;
+    border-left: 2vw solid #FFF8F8;
+    border-bottom: 2vh solid transparent;
 }
 
 // bouton
@@ -104,6 +118,7 @@ button:active {
     border-radius: 25px;
     background-color: rgba(151, 191, 226, 0.6);
 }
+
 .vignettes {
     display: flex;
     align-items: center;
