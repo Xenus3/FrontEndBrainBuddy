@@ -42,38 +42,30 @@ img {
 
 // flèches du carrousel pour changer de vignettes
 
-// .triangle-gauche {
-//     width: 0px;
-//     height: 0px;
-//     border-style: solid;
-//     border-width: 70vw 123px 70% 0;
-//     border-color: transparent #FFF8F8 transparent transparent;
-//     transform: rotate(0deg);
-//  }
-
-//  .triangle-droite {
-//     width: 0px;
-//     height: 0px;
-//     border-style: solid;
-//     border-width: 96px 0 96px 123px;
-//     border-color: transparent transparent transparent #FFF8F8;
-//     transform: rotate(0deg);
-//  }
-
 .triangle-parent {
     position: relative;
 }
 
 #triangle-gauche {
     border-top: 2vh solid transparent;
-    border-right: 2vw solid #FFF8F8;
+    border-right: 1vw solid #FFF8F8;
     border-bottom: 2vh solid transparent;
+    margin-left: 40%;
+}
+
+#triangle-gauche:hover {
+    border-right: 1vw solid #919191;
 }
 
 #triangle-droit {
     border-top: 2vh solid transparent;
-    border-left: 2vw solid #FFF8F8;
+    border-left: 1vw solid #FFF8F8;
     border-bottom: 2vh solid transparent;
+    margin-right: 40%;
+}
+
+#triangle-droit:hover {
+    border-left: 1vw solid #919191;
 }
 
 // bouton
@@ -148,6 +140,7 @@ button:active {
     margin: 5px 30%;
 }
 
+// Cercles
 .circles {
     display: flex;
 }
