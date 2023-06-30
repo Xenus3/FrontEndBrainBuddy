@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { MonkeyTestTutorielComponent } from './components/monkey-test-tutoriel/monkey-test-tutoriel.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -26,13 +27,15 @@ import { TrophesComponent } from './components/trophes/trophes.component';
     ProfilemenuComponent,
           DonneepersoComponent,
           HistoriqueComponent,
-          TrophesComponent
+          TrophesComponent,
+    MonkeyTestTutorielComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
