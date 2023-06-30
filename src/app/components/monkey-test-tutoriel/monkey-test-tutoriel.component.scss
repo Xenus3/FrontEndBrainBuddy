@@ -119,17 +119,17 @@ button:active {
     // flex-direction: row;
 }
 
-.vignette1-line1 {
+.line1 {
     display: flex;
     justify-content: space-between;
 }
 
-.vignette1-line2 {
+.line2 {
     display: flex;
     justify-content: space-evenly;
 }
 
-.vignette1-line3 {
+.line3 {
     display: flex;
     justify-content: start;
 }
@@ -137,6 +137,17 @@ button:active {
 // Tirage
 .tirage {
     border: 5px solid #161831;
+    border-radius: 15px;
+    padding: 1% 5%;
+    margin: 1% 1%;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+}
+.tirage-masque {
+    border: 5px solid #161831;
+    background-color: #161831;
+    color: #161831;
     border-radius: 15px;
     padding: 1% 5%;
     margin: 1% 1%;
