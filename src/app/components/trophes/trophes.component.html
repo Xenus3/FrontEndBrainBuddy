@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr id="header">
+            <th>Tropheé</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Rarité</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let troph of trophees">
+            <td> <img [src]="troph.trophee" alt=""></td>
+            <td> {{ troph.description }}</td>
+            <td> {{ troph.date }}</td>
+            <td> {{ troph.rarite }}</td>
+        </tr>
+    </tbody>
+</table>

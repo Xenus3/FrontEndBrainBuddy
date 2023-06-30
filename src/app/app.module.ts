@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { ProfilemenuComponent } from './components/profilemenu/profilemenu.component';
 import { DonneepersoComponent } from './components/donneeperso/donneeperso.component';
+import { HistoriqueComponent } from './components/historique/historique.component';
+import { TrophesComponent } from './components/trophes/trophes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
     ProfileComponent,
     
     ProfilemenuComponent,
-          DonneepersoComponent
+          DonneepersoComponent,
+          HistoriqueComponent,
+          TrophesComponent
   ],
   imports: [
     BrowserModule,
