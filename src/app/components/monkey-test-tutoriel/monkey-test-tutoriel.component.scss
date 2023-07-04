@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .tutoriel {
         // display: flex;
         align-items: center;
@@ -52,6 +52,7 @@ p,li {
 
 // texte
 .text {
+    margin-top: 1em;
     display: flex;
     width:90%;
 }
