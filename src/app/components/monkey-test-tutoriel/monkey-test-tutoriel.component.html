@@ -7,12 +7,12 @@
                     <div class="slider">
                         <!-- Triangle Gauche -->
                         <div class="triangle-parent">
-                            <div id="triangle-gauche"></div>
+                            <div id="triangle-gauche" (click)="slideLeft()"></div>
                         </div>
                         <!-- Slides -->
                         <div class="slides">
                             <!-- Slide 1 -->
-                            <!-- <div id="slide1">
+                            <div id="slide1">
                                 <div class="line1">
                                     <div class="tirage">1</div>
                                     <div class="tirage">4</div>
@@ -24,9 +24,9 @@
                                 <div class="line3">
                                     <div class="tirage">5</div>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- Slide 2 -->
-                            <!-- <div id="slide2">
+                            <div id="slide2" hidden>
                                 <div class="line1">
                                     <div class="tirage-masque">x</div>
                                     <div class="tirage-masque">x</div>
@@ -38,9 +38,9 @@
                                 <div class="line3">
                                     <div class="tirage-masque">x</div>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- Slide 3 -->
-                            <div id="slide3">
+                            <div id="slide3" hidden>
                                 <div class="line1">
                                     <div class="tirage">1</div>
                                     <div class="tirage-masque">x</div>
@@ -56,19 +56,19 @@
                         </div>
                         <!-- Triangle droite -->
                         <div class="triangle-parent">
-                            <div id="triangle-droit"></div>
+                            <div id="triangle-droit" (click)="slideRight()"></div>
                         </div>
                     </div>
                 </div>
                 <!-- Boutons sous le slider -->
                 <div class="circles">
-                    <div class="circle circle-marged circle-active">
+                    <div id="circle1" class="circle circle-marginRight circle-active">
                         <a href="#slide1"></a>
                     </div>
-                    <div class="circle circle-marged circle-inactive">
+                    <div id="circle2" class="circle circle-marginRight circle-inactive">
                         <a href="#slide2"></a>
                     </div>
-                    <div class="circle circle-marged circle-inactive">
+                    <div id="circle3" class="circle circle-marginRight circle-inactive">
                         <a href="#slide3"></a>
                     </div>
                 </div>
