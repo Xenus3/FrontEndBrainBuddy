@@ -1,9 +1,29 @@
-.monkey-test-tutoriel {
+.monkey-test {
     display: flex;
 }
 
-#main {
+.tutoriel {
+    display: flex;
     align-items: center;
+    margin-left: 4%;
+    margin-right: 4%;
+    width:95%;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+    .tutoriel {
+        // display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
     width:90%;
 }
 
@@ -42,6 +62,7 @@ p,li {
     margin-right: 5%;
 }
 
+// Carousel
 // flèches du carrousel pour changer de vignettes
 
 .triangle-parent {
@@ -70,40 +91,8 @@ p,li {
     border-left: 1vw solid #919191;
 }
 
-// bouton
-button {
-    background-color: #151730;
-    border: none;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    padding: 10px 50px;
-    color: #FFD458;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 25px;
-}
-
-button:hover {
-    color: #151730;
-    background-color: #488ECB;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-button:active {
-    color: #151730;
-    background-color: #FFD458;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
 // Tutoriel 
-.tutoriel {
-    display: flex;
-    align-items: center;
-    margin-left: 4%;
-    margin-right: 4%;
-    width:95%;
-    overflow: hidden;
-}
+
 
 .slider {
     display: flex;
@@ -127,9 +116,8 @@ button:active {
     padding-bottom: 5%;
 }
 
-// .vignette1 {
-//     // display: flex;
-//     // flex-direction: row;
+// .slide1 {
+//     text-align: center
 // }
 
 .line1 {
@@ -148,15 +136,19 @@ button:active {
 }
 
 // Tirage
+
 .tirage {
-    border: 5px solid #161831;
+    // display: inline-block;
+    border: 0.11em solid #161831;
     border-radius: 15px;
-    padding: 1% 5%;
     margin: 1% 1%;
     font-size: 3vw;
     font-weight: bold;
-    text-align: center;
+    width:5vw;
+    height:5vw;
+    cursor: default;
 }
+
 .tirage-masque {
     border: 5px solid #161831;
     background-color: #161831;
@@ -167,6 +159,14 @@ button:active {
     font-size: 3vw;
     font-weight: bold;
     text-align: center;
+    width:5vw;
+    height:5vw;
+    cursor: pointer;
+}
+
+.tirage-masque:hover{
+    background: #488ECB;
+    cursor: pointer;
 }
 
 // Cercles
@@ -199,4 +199,30 @@ button:active {
 .circle-inactive:hover {
     background: #488ECB;
     cursor: pointer;
+}
+// fin Carousel
+
+// bouton Jouer
+.jouer button {
+    background-color: #151730;
+    border: none;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 10px 50px;
+    color: #FFD458;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.jouer button:hover {
+    color: #151730;
+    background-color: #488ECB;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.jouer button:active {
+    color: #151730;
+    background-color: #FFD458;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

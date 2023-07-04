@@ -3,61 +3,59 @@
         <h1>MonkeyTest</h1>
         <div class="tutoriel">
             <div id="main">
-                <div class="">
-                    <div class="slider">
-                        <!-- Triangle Gauche -->
-                        <div class="triangle-parent">
-                            <div id="triangle-gauche" (click)="slideLeft()"></div>
-                        </div>
-                        <!-- Slides -->
-                        <div class="slides">
-                            <!-- Slide 1 -->
-                            <div id="slide1">
-                                <div class="line1">
-                                    <div class="tirage">1</div>
-                                    <div class="tirage">4</div>
-                                </div>
-                                <div class="line2">
-                                    <div class="tirage">3</div>
-                                    <div class="tirage">2</div>
-                                </div>
-                                <div class="line3">
-                                    <div class="tirage">5</div>
-                                </div>
+                <div class="slider">
+                    <!-- Triangle Gauche -->
+                    <div class="triangle-parent">
+                        <div id="triangle-gauche" (click)="slideLeft()"></div>
+                    </div>
+                    <!-- Slides -->
+                    <div class="slides">
+                        <!-- Slide 1 -->
+                        <div id="slide1">
+                            <div class="line1">
+                                <button class="tirage">1</button>
+                                <button class="tirage">4</button>
                             </div>
-                            <!-- Slide 2 -->
-                            <div id="slide2" hidden>
-                                <div class="line1">
-                                    <div class="tirage-masque">x</div>
-                                    <div class="tirage-masque">x</div>
-                                </div>
-                                <div class="line2">
-                                    <div class="tirage-masque">x</div>
-                                    <div class="tirage-masque">x</div>
-                                </div>
-                                <div class="line3">
-                                    <div class="tirage-masque">x</div>
-                                </div>
+                            <div class="line2">
+                                <button class="tirage">3</button>
+                                <button class="tirage">2</button>
                             </div>
-                            <!-- Slide 3 -->
-                            <div id="slide3" hidden>
-                                <div class="line1">
-                                    <div class="tirage">1</div>
-                                    <div class="tirage-masque">x</div>
-                                </div>
-                                <div class="line2">
-                                    <div class="tirage-masque">x</div>
-                                    <div class="tirage">2</div>
-                                </div>
-                                <div class="line3">
-                                    <div class="tirage-masque">x</div>
-                                </div>
+                            <div class="line3">
+                                <button class="tirage">5</button>
                             </div>
                         </div>
-                        <!-- Triangle droite -->
-                        <div class="triangle-parent">
-                            <div id="triangle-droit" (click)="slideRight()"></div>
+                        <!-- Slide 2 -->
+                        <div id="slide2" hidden>
+                            <div class="line1">
+                                <button class="tirage-masque"></button>
+                                <button class="tirage-masque"></button>
+                            </div>
+                            <div class="line2">
+                                <button class="tirage-masque"></button>
+                                <button class="tirage-masque"></button>
+                            </div>
+                            <div class="line3">
+                                <button class="tirage-masque"></button>
+                            </div>
                         </div>
+                        <!-- Slide 3 -->
+                        <div id="slide3" hidden>
+                            <div class="line1">
+                                <button class="tirage">1</button>
+                                <button class="tirage-masque"></button>
+                            </div>
+                            <div class="line2">
+                                <button class="tirage-masque"></button>
+                                <button class="tirage">2</button>
+                            </div>
+                            <div class="line3">
+                                <button class="tirage-masque"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Triangle droite -->
+                    <div class="triangle-parent">
+                        <div id="triangle-droit" (click)="slideRight()"></div>
                     </div>
                 </div>
                 <!-- Boutons sous le slider -->
@@ -77,14 +75,13 @@
                 <div class="paragraphs">
                     <h2>Règles du test</h2>
                     <p>
-                       Des nombres s'afficheront à l'écran. De mémoire, vous devrez les classer dans l'ordre croissant. Votre score dépend de votre rapidité. La difficulté augmente à chaque niveau. Vous avez trois vies et le test continue tant qu'il vous en reste.
+                       Des nombres s'afficheront à l'écran. Vous devrez, de mémoire, les classer dans l'ordre croissant. Votre score dépend de votre rapidité. La difficulté augmente à chaque niveau. Vous avez trois vies et le test continue tant qu'il vous en reste.
                     </p>
                     <h2>Déroulé d'un test</h2>
                     <ol>
                         <li>Un tirage de quatre cartes apparaît à l'écran et le chronomètre démarre.</li>
                         <li>Mémorisez les valeurs et positions puis masquez le tirage.</li>
                         <li>Cliquez ces cartes de la plus petite à la plus grande.</li>
-                        <li>En cas de succès, votre score s'actualise.</li>
                         <li>Au niveau suivant, cinq cartes apparaîtront. Et ainsi de suite.</li>
                     </ol>
                     <h2>Les pénalités</h2>
@@ -94,12 +91,12 @@
                         Il s'agit d'un test de mémoire de travail, rendu célèbre par une étude qui a révélé que les chimpanzés obtenaient systématiquement de meilleurs résultats que les humains dans cette tâche.
                     </p>
                     <p>
-                        Dans cette étude, les chimpanzés ont constamment surpassé les humains, et certains chimpanzés ont été capables de se souvenir de 9 chiffres dans plus de 90 % des cas. Bonne chance !
+                        Dans cette étude, les chimpanzés ont constamment surpassé les humains, et certains chimpanzés ont été capables de se souvenir de 9 chiffres dans plus de 90 % des cas.
                     </p>
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="jouer">
             <button>Jouer</button>
         </div>
     </div>
