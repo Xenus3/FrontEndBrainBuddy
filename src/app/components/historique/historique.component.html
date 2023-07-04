@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr id="header">
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Meilleur Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hist of historique">
+            <td> {{ hist.nom }}</td>
+            <td> {{ hist.date }}</td>
+            <td> {{ hist.meilleurscore}}</td>
+        </tr>
+    </tbody>
+</table>
