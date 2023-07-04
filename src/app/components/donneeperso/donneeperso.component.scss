@@ -31,3 +31,20 @@ button {
     padding-left: 100px;
 }
 
+@media screen and (max-width: 755px) {
+  
+    .donnee img {
+        height: 100px;
+        border: solid black 2px;
+        border-radius: 10px ;
+    }
+
+    .profile {
+        padding: 0;
+    }
+    
+    .donnee ul {
+        list-style: none;
+        font-size: 16px;
+    }
+}

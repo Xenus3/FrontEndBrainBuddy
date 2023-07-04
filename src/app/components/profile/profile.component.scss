@@ -17,3 +17,38 @@ app-profilemenu {
 .content {
     width: 70%;
 }
+
+@media  screen and (max-width: 1080px) {
+
+    app-profilemenu {
+        width: 20%;
+    }
+
+    .content{
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 755px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    app-profilemenu {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .content {
+        width: 100%;
+        
+    }
+
+    table {
+        margin: 0;
+    }
+}
+
+
+
