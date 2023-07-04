@@ -1,7 +1,7 @@
 section {
     background-color: #151730;
     color: #FDB73A;
-    PADDING-TOP: 10PX;
+    padding-top: 10PX;
 }
 .Copyright{
     background-color: #488ECB;
@@ -33,12 +33,15 @@ li {
      
     
 }
+.row {
+    display: flex;
 
+}
 
   
 img, svg {
     vertical-align: middle;
- 
+    width: 15px;
     
 }
 #designeimage{
@@ -63,7 +66,7 @@ img, svg {
     }
   
     }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .title{
         font-size: 11px;
     }
@@ -74,16 +77,19 @@ img, svg {
         float: left;
         width: 25%;
     }
-    // #designeimage{
-    //     visibility: collapse;
+    #designeimage{
+        visibility: collapse;
 
-    // }
+    }
 
   }
 
-  @media (min-width: 768px){
+  @media (max-width: 300px){
 .col-md-3 {
     flex: 0 0 auto;
     width : 25%;
     text-align: left;
-}}
+}
+
+
+}
