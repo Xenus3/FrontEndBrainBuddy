@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 950px) {
     .tutoriel {
         // display: flex;
         align-items: center;
@@ -44,7 +44,8 @@ p,li {
 }
 
 .content {
-    margin: 2.5% 10%;
+    margin: 2.5% auto;
+    width: 70vw;
     text-align: center;
     border: 4px solid #151730;
     border-radius: 10px;
@@ -234,7 +235,7 @@ p,li {
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 32vw;
     background: #e5e5e5;
     // box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
   }
@@ -253,7 +254,8 @@ p,li {
     transition: background 0.1s, color 0.1s;
   }
   .label:hover {
-    background: #d8d8d8;
+    background: rgba(151, 191, 226, 0.6);
+    color: #151730;
   }
   .label:active {
     background: #ccc;
@@ -265,17 +267,19 @@ p,li {
     background: #fff;
     color: #000;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 1000px) {
     .label {
       width: auto;
     }
   }
   .panel {
     display: none;
+    text-align: justify;
+    width: 100%;
     padding: 20px 30px 30px;
     background: #fff;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 1000px) {
     .panel {
       order: 99;
     }
