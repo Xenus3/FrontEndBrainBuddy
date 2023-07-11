@@ -16,6 +16,7 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { TrophesComponent } from './components/trophes/trophes.component';
           HistoriqueComponent,
           TrophesComponent,
     MonkeyTestTutorielComponent,
-    ConnexionComponent
+   ConnexionComponent,
+ 
   ],
   imports: [
     BrowserModule,
