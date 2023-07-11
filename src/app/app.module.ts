@@ -6,21 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
-<<<<<<< HEAD
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './components/connexion/connexion.component';
-=======
 import { MonkeyTestTutorielComponent } from './components/monkey-test-tutoriel/monkey-test-tutoriel.component';
-import { ConnexionComponent } from './components/connexion/connexion.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
-
 import { ProfilemenuComponent } from './components/profilemenu/profilemenu.component';
 import { DonneepersoComponent } from './components/donneeperso/donneeperso.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
->>>>>>> 82c9580b65faaef51ee01fcf47ad54f07b6d48a3
 
 
 @NgModule({
@@ -28,11 +22,9 @@ import { TrophesComponent } from './components/trophes/trophes.component';
     AppComponent,
     HeaderComponent,
     AccueilComponent,
-<<<<<<< HEAD
     FooterComponent,
-    ConnexionComponent
-=======
     ConnexionComponent,
+   
     ProfileComponent,
     
     ProfilemenuComponent,
@@ -40,9 +32,8 @@ import { TrophesComponent } from './components/trophes/trophes.component';
           HistoriqueComponent,
           TrophesComponent,
     MonkeyTestTutorielComponent,
-   ConnexionComponent,
  
->>>>>>> 82c9580b65faaef51ee01fcf47ad54f07b6d48a3
+ 
   ],
   imports: [
     BrowserModule,
