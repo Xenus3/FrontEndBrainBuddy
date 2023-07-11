@@ -15,6 +15,8 @@ import { ProfilemenuComponent } from './components/profilemenu/profilemenu.compo
 import { DonneepersoComponent } from './components/donneeperso/donneeperso.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
+import { JeuxComponent } from './components/jeux/jeux.component';
+
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { TrophesComponent } from './components/trophes/trophes.component';
           HistoriqueComponent,
           TrophesComponent,
     MonkeyTestTutorielComponent,
+    JeuxComponent,
+   
  
  
   ],
