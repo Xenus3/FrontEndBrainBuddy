@@ -7,19 +7,24 @@ import { Component } from '@angular/core';
 })
 export class GrideComponent {
 
-  let container = document.getElementById("container");
+  container = document.getElementById("container");
   
   ngOnInit(): void {
   }
 
-  makeRows(rows: number, cols: number): void {
+  makeRows(rows: string, cols: string): void {
+    const container = document.getElementById('container') as HTMLElement;
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
-    for (i = 0; i < (rows * cols); i++) {
-      let cell = document.createElement("div");
-      cell.innerText = (i + 1);
-      container.appendChild(cell).className = "grid-item" + i;
+    var i : number;
+    var y: number = +cols;
+    var x: number = +rows;
+    
+    for (i = 1; i <= y*x; i++) {
+      console.log(y*x);
+      let cell = document.createElement("div") as HTMLElement;
+      cell.innerText = (""+i+"");
+      container.appendChild(cell).className = "grid-item-" + i;
+      }
     };
   };
-
-}
