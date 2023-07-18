@@ -8,6 +8,8 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
+import { GrideComponent } from './components/monkey-test-tutoriel/components/gride/gride.component';
+import { TutorielComponent } from './components/monkey-test-tutoriel/components/tutoriel/tutoriel.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,11 @@ const routes: Routes = [
   },
   {
     path: "monkeytest",
-    component: MonkeyTestTutorielComponent
+    component: MonkeyTestTutorielComponent,
+    children: [
+      {path: "tutoriel", component: TutorielComponent},
+      {path: "grid", component: GrideComponent},
+    ]
   },
   {
     path: "connexion",
