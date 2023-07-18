@@ -12,28 +12,25 @@ export class ViewGraphComponent {
       height: 700
     },
     title: {
-      text: 'Evolution de la population'
+      text: 'Reaction Time Statistics'
     },
     credits: {
       enabled: false
     },
     xAxis: {
-      categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+      categories: ['0pts','1pts','2pts', '3pts', '4pts', '5pts', '6pts', '7pts','8pts','9pts','10pts','11pts','12pts', '13pts', '14pts', '15pts', '16pts', '17pts','18pts','19pts','20pts'],
       tickmarkPlacement: 'on',
       title: {
           enabled: false
       }
   },
     series: [{
-      name: 'Asia',
-      data: [502, 635, 809, 947, 1402, 3634, 5268]
+      name: 'Nouveau score',
+      data: [0 , 100]
   }, {
-      name: 'Europe',
-      data: [163, 203, 276, 408, 547, 729, 628]
-  }, {
-      name: 'America',
-      data: [18, 31, 54, 156, 339, 818, 1201]
-  }]
+      name: 'le meilleur score',
+      data: [15 , 10, 26, 6 ,60]
+  } ]
   }
   constructor() { }
   ngOnInit() {
