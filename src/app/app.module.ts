@@ -16,6 +16,7 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
+import { ViewGraphComponent } from './view-graph/view-graph.component' ;
 
 
 
@@ -26,15 +27,14 @@ import { JeuxComponent } from './components/jeux/jeux.component';
     AccueilComponent,
     FooterComponent,
     ConnexionComponent,
-   
     ProfileComponent,
-    
     ProfilemenuComponent,
           DonneepersoComponent,
           HistoriqueComponent,
           TrophesComponent,
     MonkeyTestTutorielComponent,
     JeuxComponent,
+    ViewGraphComponent,
    
  
  

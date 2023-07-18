@@ -8,6 +8,7 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
+import { ViewGraphComponent } from './view-graph/view-graph.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,10 @@ const routes: Routes = [
       {path: "historique", component: HistoriqueComponent},
       {path: "trophes", component: TrophesComponent},
     ]
-  },
+  },{
+    path: "classement",
+    component: ViewGraphComponent
+  }
  
  
 ];
