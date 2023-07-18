@@ -206,29 +206,44 @@ p,li {
 // fin Carousel
 
 // bouton Jouer
-.jouer button {
+.jouer {
+    display: flex;
+    justify-content: center;
     background-color: #151730;
-    border: none;
-    margin-top: 2%;
-    margin-bottom: 3%;
+    width:20px;
+    border: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
     padding: 10px 50px;
-    color: #FFD458;
     font-weight: bold;
-    text-decoration: none;
     border-radius: 25px;
 }
 
-.jouer button:hover {
+.jouer:hover {
     color: #151730;
     background-color: #488ECB;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.jouer button:active {
+.jouer:active {
     color: #151730;
     background-color: #FFD458;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
+.jouer a {
+    color: #FFD458;
+    text-decoration: none;
+}
+
+.jouer a:hover {
+    color: #151730;
+}
+
+.jouer a:active {
+    color: #151730;
+}
+
 
 // Tabs
 
