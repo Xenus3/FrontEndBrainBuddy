@@ -1,76 +1,215 @@
-.monkey-test-tutoriel {
+.monkey-test {
     display: flex;
-}
-
-#main {
-    display: flex;
-    margin-right:5%;
-}
-
-h1 {
-    margin-top: 1%;
-    font-weight: bold;
-    color: #151730;
-}
-
-.content {
-    margin: 2.5% 5%;
-    text-align: center;
-    border: 4px solid #151730;
-    border-radius: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 .tutoriel {
     display: flex;
-    // width: 50%;
+    align-items: center;
     margin-left: 4%;
     margin-right: 4%;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    width:95%;
+    overflow: hidden;
 }
 
-img {
-    width: 40vw;
-    padding-right: 60px;
+@media only screen and (max-width: 950px) {
+    .tutoriel {
+        // display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width:90%;
+}
+
+h1 {
+    margin-top: 1%;
+    margin-bottom: 2.5%;
+    font-weight: bold;
+    color: #151730;
+}
+
+h2 {
+    font-size: medium;
+    font-weight: bold;
+}
+
+p,li {
+    font-size: smaller;
+}
+
+.content {
+    margin: 2.5% auto;
+    width: 70vw;
+    text-align: center;
+    border: 4px solid #151730;
+    border-radius: 10px;
 }
 
 // texte
 .text {
+    margin-top: 1em;
     display: flex;
+    width:90%;
 }
 
 .paragraphs {
     text-align: justify;
+    margin-left: 2%;
+    margin-right: 5%;
 }
 
+// Carousel
 // flèches du carrousel pour changer de vignettes
-.fleche {
-    border: solid black;
-    border-width: 0 7px 7px 0;
-    display: inline-block;
-    padding: 3px;
+
+.triangle-parent {
+    position: relative;
 }
 
-.droite {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin-right: 10px;
+#triangle-gauche {
+    border-top: 2vh solid transparent;
+    border-right: 1vw solid #FFF8F8;
+    border-bottom: 2vh solid transparent;
+    cursor: pointer;
 }
 
-.gauche {
-    margin-left: 10px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+#triangle-gauche:hover {
+    border-right: 1vw solid #919191;
+    cursor: pointer;
 }
 
-// bouton
-button {
+#triangle-droit {
+    border-top: 2vh solid transparent;
+    border-left: 1vw solid #FFF8F8;
+    border-bottom: 2vh solid transparent;
+    cursor: pointer;
+}
+
+#triangle-droit:hover {
+    border-left: 1vw solid #919191;
+}
+
+// Tutoriel 
+
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #151730;
+    border-radius: 25px;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: rgba(151, 191, 226, 0.6);
+    width:95%;
+    overflow: hidden;
+}
+
+// Vignettes 
+.slides {
+    // display: flex;
+    // flex-direction: row;
+    width: 30vw;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+// .slide1 {
+//     text-align: center
+// }
+
+.line1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.line3 {
+    display: flex;
+    justify-content: start;
+}
+
+// Tirage
+
+.tirage {
+    // display: inline-block;
+    border: 0.11em solid #161831;
+    border-radius: 15px;
+    margin: 1% 1%;
+    font-size: 3vw;
+    font-weight: bold;
+    width:5vw;
+    height:5vw;
+    cursor: default;
+}
+
+.tirage-masque {
+    border: 0.11em solid #161831;
+    background-color: #161831;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 1% 5%;
+    margin: 1% 1%;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    width:5vw;
+    height:5vw;
+    cursor: pointer;
+}
+
+.tirage-masque:hover{
+    background: #488ECB;
+    cursor: pointer;
+}
+
+// Cercles
+.circles {
+    display: flex;
+    margin-top: 1%;
+    justify-content: center;
+    width:95%;
+}
+
+.circle {
+    width: 0.60em;
+    height: 0.60em;
+    border-radius: 50%;
+}
+
+.circle-marginRight {
+    margin-right: 1%;
+}
+
+.circle-active {
+    background: #151730;
+}
+
+.circle-inactive {
+    background: #B1B1B3;
+    cursor: pointer;
+}
+
+.circle-inactive:hover {
+    background: #488ECB;
+    cursor: pointer;
+}
+// fin Carousel
+
+// bouton Jouer
+.jouer button {
     background-color: #151730;
     border: none;
+    margin-top: 2%;
     margin-bottom: 3%;
     padding: 10px 50px;
     color: #FFD458;
@@ -79,54 +218,71 @@ button {
     border-radius: 25px;
 }
 
-button:hover {
+.jouer button:hover {
     color: #151730;
     background-color: #488ECB;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-button:active {
+.jouer button:active {
     color: #151730;
     background-color: #FFD458;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.vignettes {
+// Tabs
+
+.tabs {
     display: flex;
-    align-items: center;
-    padding: 15% 1%;
-    // padding-left: 10%;
-    // padding-right: 10%;
-    // padding-top: 5%;
-    margin-right: 2.5%;
-    border: 4px solid #151730;
-    border-radius: 10px;
-}
-
-.vignette1 {
-    display: flex;
-    flex-direction: row;
-    margin-right: 50px;
-}
-
-.vignette1-line1 {
-    justify-content: space-between;
-}
-
-.vignette1-line2 {
-    justify-content: space-around;
-}
-
-.tirage {
-    border: 4px solid #151730;
-    padding: 50px 50px;
-    font-size: large;
-    margin: 5px 30%;
-}
-
-.circle {
-    width: 10px;
-    height: 10px;
-    background: #151730;
-    border-radius: 50%;
-}
+    flex-wrap: wrap;
+    background: #e5e5e5;
+    // box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+  }
+  .input {
+    position: absolute;
+    opacity: 0;
+  }
+  .label {
+    width: 100%;
+    padding: 0.7vw 1vw;
+    background: #e5e5e5;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    color: #7f7f7f;
+    transition: background 0.1s, color 0.1s;
+  }
+  .label:hover {
+    background: rgba(151, 191, 226, 0.6);
+    color: #151730;
+  }
+  .label:active {
+    background: #ccc;
+  }
+  .input:focus + .label {
+    z-index: 1;
+  }
+  .input:checked + .label {
+    background: #fff;
+    color: #000;
+  }
+  @media (min-width: 1000px) {
+    .label {
+      width: auto;
+    }
+  }
+  .panel {
+    display: none;
+    text-align: justify;
+    width: 100%;
+    padding: 20px 30px 30px;
+    background: #fff;
+  }
+  @media (min-width: 1000px) {
+    .panel {
+      order: 99;
+    }
+  }
+  .input:checked + .label + .panel {
+    display: block;
+  }

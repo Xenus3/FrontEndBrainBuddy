@@ -17,7 +17,7 @@ const routes: Routes = [
     component: AccueilComponent
   },
   {
-    path: "app-monkey-test-tutoriel",
+    path: "monkeytest",
     component: MonkeyTestTutorielComponent
   },
   {

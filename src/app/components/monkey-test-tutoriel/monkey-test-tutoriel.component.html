@@ -1,63 +1,169 @@
 <div class="monkey-test">
     <div class="content">
-        <h1>ChimpTest</h1>
+        <h1>💻🐒 MonkeyTest</h1>
         <div class="tutoriel">
             <div id="main">
-                <div class="vignettes">
-                    <p><i class="fleche gauche"></i></p>
-                    <div>
-                        <div class="vignette1">
-                            <div class="vignette1-line1">
-                                <div class="tirage">1</div>
-                                <div class="tirage">4</div>
+                <div class="slider">
+                    <!-- Triangle Gauche -->
+                    <div class="triangle-parent">
+                        <div id="triangle-gauche" (click)="slideLeft()"></div>
+                    </div>
+                    <!-- Slides -->
+                    <div class="slides">
+                        <!-- Slide 1 -->
+                        <div id="slide1">
+                            <div class="line1">
+                                <button class="tirage">1</button>
+                                <button class="tirage">4</button>
                             </div>
-                            <div class="vignette1-line2">
-                                <div class="tirage">3</div>
-                                <div class="tirage">2</div>
+                            <div class="line2">
+                                <button class="tirage">3</button>
+                                <button class="tirage">2</button>
                             </div>
-                            <div class="vignette1-line3">
-                                <div class="tirage">5</div>
+                            <div class="line3">
+                                <button class="tirage">5</button>
                             </div>
                         </div>
-                        <div class="vignette2">
-
+                        <!-- Slide 2 -->
+                        <div id="slide2" hidden>
+                            <div class="line1">
+                                <button class="tirage-masque">.</button>
+                                <button class="tirage-masque">.</button>
+                                <!-- <button class="tirage-masque" (click)="toggle()" [@flipState]="">.</button> -->
+                            </div>
+                            <div class="line2">
+                                <button class="tirage-masque">.</button>
+                                <button class="tirage-masque">.</button>
+                            </div>
+                            <div class="line3">
+                                <button class="tirage-masque">.</button>
+                            </div>
                         </div>
-                        <div class="vignette1">
-
+                        <!-- Slide 3 -->
+                        <div id="slide3" hidden>
+                            <div class="line1">
+                                <button class="tirage">1</button>
+                                <button class="tirage-masque">.</button>
+                            </div>
+                            <div class="line2">
+                                <button class="tirage-masque">.</button>
+                                <button class="tirage">2</button>
+                            </div>
+                            <div class="line3">
+                                <button class="tirage-masque">.</button>
+                            </div>
                         </div>
                     </div>
-                    <p><i class="fleche droite"></i></p>
-                    <div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+                    <!-- Triangle droite -->
+                    <div class="triangle-parent">
+                        <div id="triangle-droit" (click)="slideRight()"></div>
+                    </div>
+                </div>
+                <!-- Boutons sous le slider -->
+                <div class="circles">
+                    <div id="circle1" class="circle circle-marginRight circle-active">
+                        <a href="#slide1"></a>
+                    </div>
+                    <div id="circle2" class="circle circle-marginRight circle-inactive">
+                        <a href="#slide2"></a>
+                    </div>
+                    <div id="circle3" class="circle circle-marginRight circle-inactive">
+                        <a href="#slide3"></a>
                     </div>
                 </div>
             </div>
             <div class="text">
-                <div class="paragraphs">
+                <!-- <div class="paragraphs">
+                    <div>
+                        <p>📜 Règles</p>
+                        <h2>Les règles du MonkeyTest</h2>
+                    </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti veniam molestiae
-                        praesentium optio quaerat explicabo vero nemo. Temporibus eum aliquam adipisci! Iste assumenda
-                        delectus quam perferendis id quo, accusantium rerum illum optio vel! Dolor exercitationem
-                        eligendi rem repudiandae mollitia pariatur dolorem ipsa? Reiciendis, officiis.
+                        Des <b>nombres</b> s'afficheront <b>à l'écran</b>. Vous devrez, <i><b>de mémoire</b></i>, les
+                        <b>classer dans l'ordre croissant</b>. Votre score dépend de votre rapidité. La <b>difficulté
+                            augmente</b> à chaque niveau. Vous avez <b>trois vies</b> et le test continue tant qu'il
+                        vous en reste.
                     </p>
+                    <div>
+                        <p>🐾 Etapes</p>
+                        <h2>Le MonkeyTest se déroule en 4 étapes :</h2>
+                    </div>
                     <ol>
-                        <li>Coucou</li>
-                        <li>Coucou</li>
-                        <li>Coucou</li>
-                        <li>Coucou</li>
+                        <li>Un tirage de <b>quatre cartes</b> apparaît à l'écran et le chronomètre démarre.</li>
+                        <li><b>Mémorisez les</b> puis <b>masquez le tirage.</b></li>
+                        <li><b>Cliquez</b> sur ces cartes de <b>la plus petite à la plus grande</b>.</li>
+                        <li>Au niveau suivant, <b>cinq cartes apparaîtront</b>. Et ainsi de suite.</li>
                     </ol>
+                    <div>
+                        <p>🚩 Pénalités</p>
+                        <h2>Quelles sont les pénalités du MonkeyTest ?</h2>
+                    </div>
+                    <p>Si <b>vous vous trompez</b>, vous recevez <b>une pénalité</b> et devrez recommencer le niveau.
+                        Trois pénalités et le test est terminé.</p>
+                    <div>
+                        <p>🧠 Science</p>
+                        <h2>La science derrière le MonkeyTest</h2>
+                    </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corrupti veniam molestiae
-                        praesentium optio quaerat explicabo vero nemo. Temporibus eum aliquam adipisci! Iste assumenda
-                        delectus quam perferendis id quo, accusantium rerum illum optio vel! Dolor exercitationem
-                        eligendi rem repudiandae mollitia pariatur dolorem ipsa? Reiciendis, officiis.
+                        Il s'agit d'un test de <b>mémoire de travail</b>, rendu célèbre par une étude qui a révélé que
+                        les <b>chimpanzés</b> obtenaient systématiquement de <b>meilleurs résultats que les humains</b>
+                        dans cette tâche.
                     </p>
+                    <p>
+                        Dans cette étude, les <b>chimpanzés</b> ont constamment surpassé les humains, et certains
+                        chimpanzés ont été <b>capables de se souvenir de 9 chiffres</b> dans plus de <b>90 % des
+                            cas</b>.
+                    </p>
+                </div> -->
+                <div class="tabs">
+                    <input class="input" name="tabs" type="radio" id="tab-1" checked="checked" />
+                    <label class="label" for="tab-1">1. 📜 Règles</label>
+                    <div class="panel">
+                        <h2>Les règles du MonkeyTest</h2>
+                        <p>
+                            Des <b>nombres</b> s'afficheront <b>à l'écran</b>. Vous devrez, <i><b>de mémoire</b></i>, les
+                            <b>classer dans l'ordre croissant</b>. Votre score dépend de votre rapidité. La <b>difficulté
+                                augmente</b> à chaque niveau. Vous avez <b>trois vies</b> et le test continue tant qu'il
+                            vous en reste.
+                        </p>
+                    </div>
+                    <input class="input" name="tabs" type="radio" id="tab-2" />
+                    <label class="label" for="tab-2">2. 🐾 Etapes</label>
+                    <div class="panel">
+                        <h2>Le MonkeyTest se déroule en 4 étapes :</h2>
+                        <ol>
+                            <li>Un tirage de <b>quatre cartes</b> apparaît à l'écran et le chronomètre démarre.</li>
+                            <li><b>Mémorisez les</b> puis <b>masquez le tirage.</b></li>
+                            <li><b>Cliquez</b> sur ces cartes de <b>la plus petite à la plus grande</b>.</li>
+                            <li>Au niveau suivant, <b>cinq cartes apparaîtront</b>. Et ainsi de suite.</li>
+                        </ol>
+                    </div>
+                    <input class="input" name="tabs" type="radio" id="tab-3" />
+                    <label class="label" for="tab-3">3. 🚩 Pénalités</label>
+                    <div class="panel">
+                        <h2>Quelles sont les pénalités du MonkeyTest ?</h2>
+                        <p>Si <b>vous vous trompez</b>, vous recevez <b>une pénalité</b> et devrez recommencer le niveau.
+                            Trois pénalités et le test est terminé.</p>
+                    </div>
+                    <input class="input" name="tabs" type="radio" id="tab-4" />
+                    <label class="label" for="tab-4">4. 🧠 Science</label>
+                        <div class="panel">
+                            <h2>La science derrière le MonkeyTest</h2>
+                            <p>
+                                Il s'agit d'un test de <b>mémoire de travail</b>, rendu célèbre par une étude qui a révélé que
+                                les <b>chimpanzés</b> obtenaient systématiquement de <b>meilleurs résultats que les humains</b>
+                                dans cette tâche.
+                            </p>
+                            <p>
+                                Dans cette étude, les <b>chimpanzés</b> ont constamment surpassé les humains, et certains
+                                chimpanzés ont été <b>capables de se souvenir de 9 chiffres</b> dans plus de <b>90 % des
+                                    cas</b>.
+                            </p>
+                        </div>
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="jouer">
             <button>Jouer</button>
         </div>
     </div>
