@@ -30,7 +30,7 @@ export class GrideComponent {
     };
 
     ngAfterViewInit(){
-      this.makeRows('10','15');;//Put here your function or what you need
+      this.makeRows('8','5');;//Put here your function or what you need
     }
 
   };
