@@ -20,11 +20,16 @@ export class GrideComponent {
     var y: number = +cols;
     var x: number = +rows;
     
+    // masquer le bouton jouer
+    // const btnjouer = document.getElementById('btn-jouer') as HTMLElement;
+    // btnjouer.hidden = true;
+
+
     for (i = 1; i <= y*x; i++) {
       console.log(y*x);
       let cell = document.createElement("div") as HTMLElement;
       cell.innerText = (""+i+"");
-      container.appendChild(cell).className = "grid-item-" + i;
+      container.appendChild(cell).className = "draw " + i;
       }
     };
   };
