@@ -8,6 +8,6 @@ import { User } from 'src/app/entities/user';
 })
 export class DonneepersoComponent {
 
-  donnees: User[] = [{nom: "Karim", email: "karim@gmail.com", motdepasse: "1234"}];
+  donnees: User[] = [{userName: "Karim", email: "karim@gmail.com", password: "1234"}];
 
 }
