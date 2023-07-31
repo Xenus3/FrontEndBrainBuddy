@@ -214,18 +214,6 @@ p,li {
     cursor: pointer;
 }
 
-.jouer:hover {
-    color: #151730;
-    background-color: #488ECB;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-.jouer:active {
-    color: #151730;
-    background-color: #FFD458;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
 .jouer a {
     color: #FFD458;
     text-decoration: none;
@@ -233,6 +221,24 @@ p,li {
 
 .jouer a:hover {
     color: #151730;
+}
+
+// hover
+.jouer:hover a {
+    color: #151730;
+}
+
+.jouer:hover {
+    color: #151730;
+    background-color: #488ECB;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+// active
+.jouer:active {
+    color: #151730;
+    background-color: #FFD458;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .jouer a:active {
