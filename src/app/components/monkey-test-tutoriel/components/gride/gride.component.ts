@@ -25,7 +25,8 @@ export class GrideComponent {
       console.log(y*x);
       let cell = document.createElement("div") as HTMLElement;
       cell.innerText = (""+i+"");
-      container.appendChild(cell).className = "tirage " + i;
+      container.appendChild(cell).className = "tirage";
+      //container.appendChild(cell).className = "tirage " + i+"";
     }
     };
 
