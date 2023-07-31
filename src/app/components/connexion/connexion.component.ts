@@ -18,8 +18,7 @@ public inscriptionForm !: FormGroup
 	  
   }
 
-public connexionForm !: FormGroup
-public inscriptionForm !: FormGroup
+
 
 ngOnInit(): void {
   this.connexionForm = this.formBuilder.group({
