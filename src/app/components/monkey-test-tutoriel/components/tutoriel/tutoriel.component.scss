@@ -96,7 +96,6 @@ p,li {
 
 // Tutoriel 
 
-
 .slider {
     display: flex;
     align-items: center;
@@ -111,17 +110,12 @@ p,li {
 }
 
 // Vignettes 
+
 .slides {
-    // display: flex;
-    // flex-direction: row;
     width: 30vw;
     padding-top: 5%;
     padding-bottom: 5%;
 }
-
-// .slide1 {
-//     text-align: center
-// }
 
 .line1 {
     display: flex;
@@ -141,7 +135,6 @@ p,li {
 // Tirage
 
 .tirage {
-    // display: inline-block;
     border: 0.11em solid #161831;
     border-radius: 15px;
     margin: 1% 1%;
@@ -173,6 +166,7 @@ p,li {
 }
 
 // Cercles
+
 .circles {
     display: flex;
     margin-top: 1%;
