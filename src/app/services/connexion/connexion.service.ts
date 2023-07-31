@@ -8,12 +8,13 @@ import { Inscription } from 'src/app/entities/inscription';
 })
 export class ConnexionService {
 
-  connexionUrl: string = '';
+  connexionUrl: string = 'http://localhost:8080/users';
 
   constructor(private httpClient: HttpClient) { }
 
   createUser(user: Inscription): Observable<Inscription>  {
     return this.httpClient.post<Inscription>(this.connexionUrl, user)
+    
       
   }
 }

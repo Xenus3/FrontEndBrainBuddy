@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+//import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConnexionService } from 'src/app/services/connexion/connexion.service';
 
 @Component({
@@ -7,32 +9,44 @@ import { ConnexionService } from 'src/app/services/connexion/connexion.service';
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })
-export class ConnexionComponent {
+export class ConnexionComponent implements OnInit {
 
+public connexionForm !: FormGroup
+public inscriptionForm !: FormGroup
 
-  constructor(private connexionService: ConnexionService) {}
+  constructor(private connexionService: ConnexionService, private router: Router, private formBuilder: FormBuilder) {}
 
-  connexionForm: UntypedFormGroup = new UntypedFormGroup({
-    email: new UntypedFormControl('', Validators.required),
-    motdepasse: new UntypedFormControl('', Validators.required),
+ngOnInit(): void {
+  this.connexionForm = this.formBuilder.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
     
    
   });
 
-  inscriptionForm: UntypedFormGroup = new UntypedFormGroup({
-    nom: new UntypedFormControl('', Validators.required),
-    email: new UntypedFormControl('', Validators.required),
-    motdepasse: new UntypedFormControl('', [Validators.required, Validators.pattern('(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]),
-    confirmation: new UntypedFormControl('', Validators.required)
+  this.inscriptionForm = this.formBuilder.group({
+    userName: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', [Validators.required, Validators.pattern('(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]],
+    confirmation: ['', Validators.required]
   });
-  
+ }
 // Methode pour connecter l'utilisateur
     connexion(): void {
 
     }
 // Methode pour ajouter l'utilisateur a notre base de donneés
+
     inscription(): void {
-      let user = this.inscriptionForm.value;
-      this.connexionService.createUser(user);
+	  let user = this.inscriptionForm.value;
+      this.connexionService.createUser(user)
+      	.subscribe(res=>{
+      		alert('SIGNIN SUCCESFUL');
+      		this.inscriptionForm.reset()
+      		this.router.navigate(["connexion"])
+    	},err=>{
+      		alert("Something went wrong")
+    	})
+      
     }
 }
