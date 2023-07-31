@@ -3,15 +3,15 @@
         <form action="" class="formulaire" [formGroup]="connexionForm" (ngSubmit)="connexion()">
             <h2>Se Connecter</h2>
             <div class="forelem">
-                <label for="email-c">E-mail:</label>
-                <input type="text" id="email-c" formControlName="email">
+                <label for="email">E-mail:</label>
+                <input type="text" id="email-a" formControlName="email">
             </div>
             <span class="alerte" *ngIf="connexionForm.controls['email'].errors?.['required']">
                 Champ Requis
             </span>
             <div class="forelem">
-                <label for="mdp-c">Mot de Passe:</label>
-                <input type="text" id="mdp-c" formControlName="password">
+                <label for="mdp">Mot de Passe:</label>
+                <input type="text" id="mdp-a" formControlName="password">
             </div>
             <span class="alerte" *ngIf="connexionForm.controls['password'].errors?.['required']">
                 Champ Requis
@@ -51,7 +51,7 @@
             </span>
             <div class="forelem">
                 <label for="email">Confirmation:</label>
-                <input type="password" id="mdp-b" formControlName="confirmation">
+                <input type="password" id="conf" formControlName="confirmation">
             </div>
             <span class="alerte" *ngIf="inscriptionForm.controls['confirmation'].errors?.['required']">
                 Champ Requis
