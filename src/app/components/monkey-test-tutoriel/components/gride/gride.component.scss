@@ -41,63 +41,68 @@ h1 {
 }
 
 .content {
+  display: flex;
+  align-items: center;
   margin: 0.02% auto 2vw;
   width: 70vw;
-  text-align: center;
   border: 4px solid #151730;
   border-radius: 10px;
+  text-align: center;
 }
 
-  // Tirage
+#grid {
+  height: 22vw;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right:auto;
+}
 
-  .tirage {
-    // display: inline-block;
-    border: 0.11em solid #161831;
-    border-radius: 15px;
-    margin: 0,3% 0,3%;
-    font-size: 2vw;
-    font-weight: bold;
-    text-align: center;
-    width:4vw;
-    height:4vw;
-    cursor: default;
-  }
-  
-  .tirage-masque {
-    border: 0.11em solid #161831;
-    background-color: #161831;
-    color: #ffffff;
-    border-radius: 15px;
-    padding: 1% 5%;
-    margin: 1% 1%;
-    font-size: 3vw;
-    font-weight: bold;
-    text-align: center;
-    width:5vw;
-    height:5vw;
-    cursor: pointer;
-  }
-  
-  .tirage-masque:hover{
-    background: #488ECB;
-    cursor: pointer;
-  }
+#tirage {
+  display: flex;
+  width: 45vw;
+  border: 4px solid #151730;
+  flex-direction: row;
+}
+
+// Tirage
+
+.tirage {
+  flex-shrink: 0;
+  width:4vw;
+  height:4vw;
+  border: 0.11em solid #77d465;
+  border-radius: 15px;
+  margin: 0.5vw 0.75vw;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+}
+
+.tirage-masque {
+  border: 0.11em solid #161831;
+  background-color: #161831;
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 1% 5%;
+  margin: 1% 1%;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+  width:5vw;
+  height:5vw;
+  cursor: pointer;
+}
+
+.tirage-masque:hover{
+  background: #488ECB;
+  cursor: pointer;
+}
 
 :root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-  }
-  
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-  }
-  
-  .grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+
 
