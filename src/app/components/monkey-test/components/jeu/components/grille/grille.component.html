@@ -1,1 +1,8 @@
-<p>grille works!</p>
+<div *ngFor="let cell of grille; let i = index">
+    <!-- <div *ngFor="let cell of cells; let j = index">
+        <div *ngIf="i === cells[j]; else elseBlock">Content {{i}}</div>
+    <ng-template #elseBlock>
+        <p>vide {{i}}</p>
+    </ng-template>     -->
+    <p>{{cell}}</p>
+</div>
