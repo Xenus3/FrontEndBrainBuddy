@@ -13,15 +13,25 @@ export class GrideComponent {
   ngOnInit(): void {
     let life = 3;
     let level = 4;
-    while (life > 0) {
-      this.tirage(level);
-      this.makeRows('5','8');
-    }
+    this.tirage(level);
+    // while (life > 0) {
+    //   this.makeRows('5','8');
+    // }
   }
 
-  // Tirage de l'emplacement des n cartes à deviner (n étant le level)
+  // Tirage de l'emplacement des n cartes à deviner (n étant égale au level atteint)
   tirage(level:number){
-    let cells : number[];
+    let cells : number[] = [];
+    let tirage :number;
+    for (let index = 0; index < level; index++) {
+      do {
+        tirage = this.randomIntFromInterval();
+      } while(cells.includes(tirage));
+      cells[index] = tirage;
+    }
+    cells.forEach(element => {
+      console.log(element);
+    });
   }
 
   // Générer des nombres aléatoires compris dans la taille de la grille
