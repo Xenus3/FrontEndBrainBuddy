@@ -18,7 +18,7 @@ import { HistoriqueComponent } from './components/historique/historique.componen
 import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
 import { JeuComponent } from './components/monkey-test/components/jeu/jeu.component';
-import { GrilleComponent } from './components/monkey-test/components/grille/grille.component';
+import { GrilleComponent } from './components/monkey-test/components/jeu/components/grille/grille.component';
 
 
 
