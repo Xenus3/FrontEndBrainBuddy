@@ -9,22 +9,24 @@ import { Component, Input, OnInit } from '@angular/core';
 export class GrilleComponent implements OnInit {
 
   // Variables
-  life = 3;
+  life = 0;
   level = 4;
   rows = 5;
   columns = 10;
   draw = this.rows * this.columns;
   container = document.getElementById("tirage");
-
+  
   grille = new Array(this.draw);
+  tirages : number[] = [];
+  chain : number = 0;
 
   // Lancement du jeu
   ngOnInit() {
+    this.life = 3;
     this.generateGrid();
   }
 
   generateGrid() {
-    let tirages : number[] = [];
     let random : number;
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
@@ -32,10 +34,11 @@ export class GrilleComponent implements OnInit {
     for (let i = 0; i < this.level; i++){
       do {
         random = this.randomIntFromInterval();
-      } while (tirages.includes(random));
-      tirages[i] = random;  
+      } while (this.tirages.includes(random));
+      this.tirages[i] = random;  
       this.grille[random - 1] =  i+1;
     }
+    this.chain = 0;
   }
 
   // Génére un nombre aléatoire compris entre 1 et la taille de la grille (this.draw) du jeu 
@@ -56,9 +59,14 @@ export class GrilleComponent implements OnInit {
       carte.hidden = false;
     }
   }
+
   // vérifie si les cartes sont cliquées dans l'ordre croissant
   checkOrder(cell:number) {
-    console.log(""+cell+"");
-    
+    if (cell === this.chain + 1) {
+      this.chain++;
+    }
+    if (cell !== this.chain + 1) {
+      this.chain++;
+    }
   }
 }
