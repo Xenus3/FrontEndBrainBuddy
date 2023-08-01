@@ -1,10 +1,15 @@
 <div id="container">
     <div *ngFor="let cell of grille; let i = index">
-        <div *ngIf="cell == null">
-            <p class="null"></p>
+        <div class="carte-vide" *ngIf="cell == null">
+            <p></p>
         </div>
-        <div *ngIf="cell != null">
-            <p class="tirage">{{cell}}</p>
+        <div class="carte"  *ngIf="cell != null">
+            <div class="carte-recto">
+                <p>{{cell}}</p>
+            </div>
+            <div class="carte-verso" hidden>
+                <p>.</p>
+            </div>
         </div>
     </div>
 </div>
