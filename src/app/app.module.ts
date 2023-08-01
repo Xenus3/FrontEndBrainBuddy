@@ -17,12 +17,9 @@ import { DonneepersoComponent } from './components/donneeperso/donneeperso.compo
 import { HistoriqueComponent } from './components/historique/historique.component';
 import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
-<<<<<<< HEAD
 import { JeuComponent } from './components/monkey-test/components/jeu/jeu.component';
 import { GrilleComponent } from './components/monkey-test/components/jeu/components/grille/grille.component';
-=======
 import { ViewGraphComponent } from './components/view-graph/view-graph.component' ;
->>>>>>> 5d99621a1e928583922ce4e49853933ee7a86a19
 
 
 
@@ -40,12 +37,9 @@ import { ViewGraphComponent } from './components/view-graph/view-graph.component
           TrophesComponent,
     MonkeyTestComponent,
     JeuxComponent,
-<<<<<<< HEAD
     JeuComponent,
     GrilleComponent,
-=======
-    ViewGraphComponent,
->>>>>>> 5d99621a1e928583922ce4e49853933ee7a86a19
+    ViewGraphComponent
    
  
  
