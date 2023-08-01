@@ -11,7 +11,7 @@
             </span>
             <div class="forelem">
                 <label for="mdp">Mot de Passe:</label>
-                <input type="text" id="mdp-a" formControlName="password">
+                <input type="password" id="mdp-a" formControlName="password">
             </div>
             <span class="alerte" *ngIf="connexionForm.controls['password'].errors?.['required']">
                 Champ Requis
