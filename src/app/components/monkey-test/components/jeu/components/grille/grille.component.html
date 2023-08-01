@@ -7,7 +7,7 @@
             <div class="carte-recto" (click)="flipCards()">
                 <p>{{cell}}</p>
             </div>
-            <div class="carte-verso" (click)="checkOrder(cell)" hidden>
+            <div class="carte-verso" (click)="checkOrder(cell,$event)" hidden>
                 <p>.</p>
             </div>
         </div>

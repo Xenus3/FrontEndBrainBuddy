@@ -28,6 +28,7 @@ export class GrilleComponent implements OnInit {
 
   generateGrid() {
     let random : number;
+    this.tirages= [];
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
     }
@@ -49,11 +50,11 @@ export class GrilleComponent implements OnInit {
   // retourne l'ensemble des cartes
   flipCards() {
     const cartesRecto = document.getElementsByClassName("carte-recto");
-    const cartesVerso = document.getElementsByClassName("carte-verso");
     for (let i = 0; i < cartesRecto.length; i++) {
       const carte = cartesRecto[i] as HTMLElement;
       carte.hidden = true;
     }
+    const cartesVerso = document.getElementsByClassName("carte-verso");
     for (let i = 0; i < cartesVerso.length; i++) {
       const carte = cartesVerso[i] as HTMLElement;
       carte.hidden = false;
@@ -61,12 +62,17 @@ export class GrilleComponent implements OnInit {
   }
 
   // vérifie si les cartes sont cliquées dans l'ordre croissant
-  checkOrder(cell:number) {
+  checkOrder(cell:number, event : Event) {
+    let parent = ( <HTMLElement>event.target ).parentElement as HTMLElement;
+    console.log(parent.classList);
     if (cell === this.chain + 1) {
+      parent.innerHTML = "";
+      parent.classList.remove("carte-verso")
+      parent.classList.add("carte-vide")
       this.chain++;
     }
     if (cell !== this.chain + 1) {
-      this.chain++;
+      this.life--;
     }
   }
 }
