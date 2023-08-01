@@ -70,9 +70,10 @@ export class GrilleComponent implements OnInit {
       parent.classList.remove("carte-verso")
       parent.classList.add("carte-vide")
       this.chain++;
-    }
-    if (cell !== this.chain + 1) {
+    } else {
       this.life--;
+      console.log("vie restante");
+      console.log(this.life);
     }
   }
 }
