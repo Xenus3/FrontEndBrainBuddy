@@ -28,12 +28,10 @@ export class GrilleComponent implements OnInit {
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
     }
-    let x : number = 1;
     for (let i = 0; i < this.level; i++){
       tirage = this.randomIntFromInterval();
       console.log(tirage);
-      this.grille[tirage - 1] =  x;
-      x++;
+      this.grille[tirage - 1] =  i+1;
     }
   }
 
