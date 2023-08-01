@@ -4,7 +4,8 @@
     display:flex;
     justify-content: center;
     border: black solid 2px;
-    height: 500px;
+    height: 100%;
+   
 }
 
 .form1 {
@@ -81,6 +82,7 @@
 @media screen and (max-width: 1500px) {
     .form {
         width: 70%;
+        margin-top: 30PX;
     }
 }
 
@@ -89,7 +91,8 @@
     .form {
         flex-direction: column;
         border: none;
-        margin-top: 250px;
+        margin-top: 7%;
+        margin-left: 15%;
     }
 
     .form2 {
@@ -114,8 +117,10 @@
 @media screen and (max-width: 760px) {
 
     .form {
-        margin-top: 300px;
+        margin-top: 4%;
         width: 80%;
+       margin-left: 11%;
+        
     }
 
     .forelem {

@@ -1,5 +1,5 @@
 export interface Inscription {
-    nom: string,
+    userName: string,
     email: string,
-    motdepasse: string
+    password: string
 }
