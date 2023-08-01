@@ -24,14 +24,17 @@ export class GrilleComponent implements OnInit {
   }
 
   generateGrid() {
-    let tirage : number;
+    let random : number;
+    let tirages : number[] = [];
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
     }
     for (let i = 0; i < this.level; i++){
-      tirage = this.randomIntFromInterval();
-      console.log(tirage);
-      this.grille[tirage - 1] =  i+1;
+      do {
+        random = this.randomIntFromInterval();
+        console.log(random);
+      } while (tirages.includes(random));
+      this.grille[random - 1] =  i+1;
     }
   }
 

@@ -14,6 +14,8 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right:auto;
+    text-align: center;
+    vertical-align: middle;
 }
 
 // Tirage
@@ -28,7 +30,6 @@
     margin: 0.2vw 0.2vw;
     font-size: 2vw;
     font-weight: bold;
-    text-align: center;
 }
 
 .null {
@@ -37,9 +38,7 @@
     height:4vw;
     border: 0.11em solid #ffffff;
     background-color: #ffffff;
-    font-size: 2vw;
-    font-weight: bold;
-    text-align: center;
+    margin: 0.2vw 0.2vw;
     cursor: default;
 }
 
