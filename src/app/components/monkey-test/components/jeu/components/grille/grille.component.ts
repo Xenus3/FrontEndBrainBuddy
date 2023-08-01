@@ -43,4 +43,22 @@ export class GrilleComponent implements OnInit {
     return Math.floor(Math.random() * this.draw + 1)
   }
 
+  // retourne l'ensemble des cartes
+  flipCards() {
+    const cartesRecto = document.getElementsByClassName("carte-recto");
+    const cartesVerso = document.getElementsByClassName("carte-verso");
+    for (let i = 0; i < cartesRecto.length; i++) {
+      const carte = cartesRecto[i] as HTMLElement;
+      carte.hidden = true;
+    }
+    for (let i = 0; i < cartesVerso.length; i++) {
+      const carte = cartesVerso[i] as HTMLElement;
+      carte.hidden = false;
+    }
+  }
+  // vérifie si les cartes sont cliquées dans l'ordre croissant
+  checkOrder(cell:number) {
+    console.log(""+cell+"");
+    
+  }
 }

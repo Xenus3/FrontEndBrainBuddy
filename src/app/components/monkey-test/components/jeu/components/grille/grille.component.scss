@@ -27,7 +27,6 @@
     border: 0.11em solid #ffffff;
     background-color: #ffffff;
     margin: 0.2vw 0.2vw;
-    cursor: default;
 }
 
 .carte-recto {
@@ -40,13 +39,14 @@
     margin: 0.2vw 0.2vw;
     font-size: 2vw;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .carte-recto p {
     margin: 0 0;
 }
 
-.carte-rectoe:hover {
+.carte-recto:hover {
     border: 0.11em solid #488ECB;
     color: #488ECB;
     cursor: pointer;

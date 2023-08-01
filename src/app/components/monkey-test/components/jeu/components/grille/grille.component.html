@@ -3,11 +3,11 @@
         <div class="carte-vide" *ngIf="cell == null">
             <p></p>
         </div>
-        <div class="carte"  *ngIf="cell != null">
-            <div class="carte-recto">
+        <div class="carte" *ngIf="cell != null">
+            <div class="carte-recto" (click)="flipCards()">
                 <p>{{cell}}</p>
             </div>
-            <div class="carte-verso" hidden>
+            <div class="carte-verso" (click)="checkOrder(cell)" hidden>
                 <p>.</p>
             </div>
         </div>
