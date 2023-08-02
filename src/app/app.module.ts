@@ -19,7 +19,8 @@ import { TrophesComponent } from './components/trophes/trophes.component';
 import { JeuxComponent } from './components/jeux/jeux.component';
 import { JeuComponent } from './components/monkey-test/components/jeu/jeu.component';
 import { GrilleComponent } from './components/monkey-test/components/jeu/components/grille/grille.component';
-import { ViewGraphComponent } from './components/view-graph/view-graph.component' ;
+import { ViewGraphComponent } from './components/view-graph/view-graph.component';
+import { TypingComponent } from './components/typing/typing.component' ;
 
 
 
@@ -39,10 +40,8 @@ import { ViewGraphComponent } from './components/view-graph/view-graph.component
     JeuxComponent,
     JeuComponent,
     GrilleComponent,
-    ViewGraphComponent
-   
- 
- 
+    ViewGraphComponent,
+    TypingComponent
   ],
   imports: [
     BrowserModule,
