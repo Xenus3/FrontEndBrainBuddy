@@ -10,12 +10,34 @@
 #game-screen {
     display: flex;
     width: 44vw;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+
     margin-left: auto;
     margin-right:auto;
     text-align: center;
-    vertical-align: middle;
+}
+
+#cartes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+// icones
+#icones {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+  }
+  
+.icone {
+display:flex;
+margin-right: 1vw;
+}
+
+.icone svg {
+margin-right: 0.2vw;
 }
 
 // Tirage

@@ -27,6 +27,12 @@ export class GrilleComponent implements OnInit {
     this.generateGrid();
   }
 
+  restart(life:number,level:number) {
+    this.life = life;
+    this.level = level;
+    this.generateGrid();
+  }
+
   generateGrid() {
     let random: number;
     this.grille = [];
@@ -39,6 +45,8 @@ export class GrilleComponent implements OnInit {
         random = this.randomIntFromInterval();
       } while (this.tirages.includes(random));
       this.tirages[i] = random;
+      console.log(this.tirages[i]);
+      console.log(this.tirages);
       this.grille[random - 1] = i + 1;
     }
     this.chain = 0;
@@ -66,41 +74,40 @@ export class GrilleComponent implements OnInit {
   // vérifie si les cartes sont cliquées dans l'ordre croissant
   checkOrder(cell: number, event: Event) {
     let parent = (<HTMLElement>event.target).parentElement as HTMLElement;
-    console.log(parent.classList);
+    // console.log(parent.classList);
     if (cell === this.chain + 1) {
       parent.innerHTML = "";
+      // ici
       parent.classList.remove("carte-verso")
       parent.classList.add("carte-vide")
       this.chain++;
       if (this.chain === this.level) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
         const scorescreen = document.getElementById("score-screen") as HTMLElement;   
-        this.switchScreen(gamescreen);
-        this.switchScreen(scorescreen);
+        this.switchHiddenState(gamescreen);
+        this.switchHiddenState(scorescreen);
       }
     } else {
       this.life--;
-      console.log("vie restante");
-      console.log(this.life);
       if (this.life === 0) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
         const endscreen = document.getElementById("end-screen") as HTMLElement;   
-        this.switchScreen(gamescreen);
-        this.switchScreen(endscreen);
+        this.switchHiddenState(gamescreen);
+        this.switchHiddenState(endscreen);
       }
     }
   }
 
   // Masquer l'élément HTML envoyé
-  switchScreen(screen: HTMLElement) {
+  switchHiddenState(screen: HTMLElement) {
     screen.hidden = !screen.hidden;
   }
 
   nextRound() {
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     const scorescreen = document.getElementById("score-screen") as HTMLElement;
-    this.switchScreen(scorescreen);
-    this.switchScreen(gamescreen);
+    this.switchHiddenState(scorescreen);
+    this.switchHiddenState(gamescreen);
     this.level++;
     this.flipCards();
     this.generateGrid();

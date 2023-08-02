@@ -1,27 +1,89 @@
 <div id="game-screen">
-    <div *ngFor="let cell of grille; let i = index">
-        <div class="carte-vide" *ngIf="cell == null">
-            <p></p>
+    <div id="icones">
+        <div class="icone">
+            <svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="path1"
+                    style="stroke:#151730;stroke-opacity:1" />
+            </svg>
+            <p>Vies : {{ life }}</p>
         </div>
-        <div class="carte" *ngIf="cell != null">
-            <div class="carte-recto" (click)="flipCards()">
-                <p>{{cell}}</p>
+
+        <div class="icone">
+            <svg width="1.6vw" height="1.6vw" viewBox="0 0 211.66666 211.66667">
+                <defs id="defs1" />
+                <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1"
+                    transform="translate(0.79375001,-42.597918)">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                        transform="matrix(10.583333,0,0,10.583333,-0.79375,42.597917)"
+                        inkscape:export-filename="Page-1.svg" inkscape:export-xdpi="96" inkscape:export-ydpi="96">
+                        <g id="Dribbble-Light-Preview" transform="translate(-60,-7959)" fill="#000000">
+                            <g id="icons" transform="translate(56,160)">
+                                <path
+                                    d="m 6,7816 c 0,0.552 0.448,1 1,1 h 14 c 0.552,0 1,-0.448 1,-1 v -14 c 0,-0.552 -0.448,-1 -1,-1 h -2 c -0.552,0 -1,0.448 -1,1 v 3 c 0,1.105 -0.896,2 -2,2 h -3 c -0.552,0 -1,0.448 -1,1 v 3 c 0,1.105 -0.896,2 -2,2 H 7 c -0.552,0 -1,0.448 -1,1 z m 0,-5 h 3 c 0.552,0 1,-0.448 1,-1 v -3 c 0,-1.105 0.896,-2 2,-2 h 4 v -4 c 0,-1.105 0.896,-2 2,-2 h 4 c 1.104,0 2,0.895 2,2 v 16 c 0,1.105 -0.896,2 -2,2 H 6 c -1.104,0 -2,-0.895 -2,-2 v -4 c 0,-1.105 0.896,-2 2,-2 z"
+                                    id="stairs-[#58]" style="fill:#151730;fill-opacity:1" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p>Level : {{ level }}</p>
+        </div>
+
+        <div class="icone">
+            <svg width="1.6vw" height="1.6vw" viewBox="-2 0 30 30" version="1.1" id="svg1"
+                sodipodi:docname="timer-svgrepo-com(1).svg" inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <title id="title1">timer</title>
+                <defs id="defs1" />
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-519.000000, -360.000000)"
+                        fill="#000000">
+                        <path
+                            d="M533,374.184 L533,369 C533,368.448 532.553,368 532,368 C531.447,368 531,368.448 531,369 L531,374.184 C529.838,374.597 529,375.695 529,377 C529,378.657 530.343,380 532,380 C533.657,380 535,378.657 535,377 C535,375.695 534.162,374.597 533,374.184 L533,374.184 Z M532,388 C525.925,388 521,383.075 521,377 C521,370.925 525.925,366 532,366 C538.075,366 543,370.925 543,377 C543,383.075 538.075,388 532,388 L532,388 Z M532.99,364.05 C532.991,364.032 533,364.018 533,364 L533,362 L537,362 C537.553,362 538,361.553 538,361 C538,360.447 537.553,360 537,360 L527,360 C526.447,360 526,360.447 526,361 C526,361.553 526.447,362 527,362 L531,362 L531,364 C531,364.018 531.009,364.032 531.01,364.05 C524.295,364.558 519,370.154 519,377 C519,384.18 524.82,390 532,390 C539.18,390 545,384.18 545,377 C545,370.154 539.705,364.558 532.99,364.05 L532.99,364.05 Z"
+                            id="timer" sketch:type="MSShapeGroup" style="fill:#151730;fill-opacity:1" />
+                    </g>
+                </g>
+            </svg>
+            <p>Timer : {{ life }}</p>
+        </div>
+    </div>
+    <div id="cartes">
+        <div *ngFor="let cell of grille; let i = index">
+            <div class="carte-vide" *ngIf="cell == null">
+                <p></p>
             </div>
-            <div class="carte-verso" (click)="checkOrder(cell,$event)" hidden>
-                <p>.</p>
+            <div class="carte" *ngIf="cell != null">
+                <div class="carte-recto" (click)="flipCards()">
+                    <p>{{cell}}</p>
+                </div>
+                <div class="carte-verso" (click)="checkOrder(cell,$event)" hidden>
+                    <p>.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div id="score-screen" (click)="nextRound()" hidden>
     <p>Victoire !</p>
     <p>Level : {{level}}</p>
     <p>Vies restantes : {{life}}</p>
     <button>Continuer</button>
 </div>
+
+<div id="error-screen" (click)="restart(life,level)" hidden>
+    <p>Erreur !</p>
+    <p>Level : {{level}}</p>
+    <p>Vies restantes : {{life}}</p>
+    <button>Continuer</button>
+</div>
+
 <div id="end-screen" hidden>
     <p>Level : {{level}}</p>
     <p>Votre score : XXX</p>
-    <p>Vies restantes : {{life}}</p>
     <button><a href="http://localhost:4200/monkeytest/jeu">Rejouer ?</a></button>
 </div>
