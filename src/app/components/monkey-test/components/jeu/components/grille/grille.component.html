@@ -69,21 +69,21 @@
 </div>
 
 <div id="score-screen" (click)="nextRound()" hidden>
+    <h2>Level : {{level}}</h2>
     <p>Victoire !</p>
-    <p>Level : {{level}}</p>
     <p>Vies restantes : {{life}}</p>
     <button>Continuer</button>
 </div>
 
 <div id="error-screen" (click)="restart(life,level)" hidden>
-    <p>Erreur !</p>
+    <h2>Erreur !</h2>
     <p>Level : {{level}}</p>
     <p>Vies restantes : {{life}}</p>
     <button>Continuer</button>
 </div>
 
 <div id="end-screen" hidden>
-    <p>Level : {{level}}</p>
+    <h2>Level : {{level}}</h2>
     <p>Votre score : XXX</p>
     <button><a href="http://localhost:4200/monkeytest/jeu">Rejouer ?</a></button>
 </div>

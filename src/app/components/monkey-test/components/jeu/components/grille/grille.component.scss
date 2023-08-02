@@ -11,7 +11,6 @@
     display: flex;
     width: 44vw;
     flex-direction: column;
-
     margin-left: auto;
     margin-right:auto;
     text-align: center;
@@ -91,7 +90,19 @@ margin-right: 0.2vw;
 }
 
 .carte-verso:hover{
-background: #488ECB;
-cursor: pointer;
+    background: #488ECB;
+    cursor: pointer;
 }
+    
+
+.carte-verso.cliquee {
+    flex-shrink: 0;
+    width:4vw;
+    height:4vw;
+    border: 0.11em solid #ffffff;
+    background-color: #ffffff;
+    margin: 0.2vw 0.2vw;
+    cursor: default;    
+}
+
 

@@ -20,6 +20,7 @@ export class GrilleComponent implements OnInit {
   grille = new Array(this.draw);
   tirages: number[] = [];
   chain: number = 0;
+  cliquedCards: HTMLElement[] = [];
 
   // Lancement du jeu
   ngOnInit() {
@@ -27,12 +28,14 @@ export class GrilleComponent implements OnInit {
     this.generateGrid();
   }
 
+  // appelé lorsque le joueur décide de rejouer depuis l'écran erreur
   restart(life:number,level:number) {
     this.life = life;
     this.level = level;
     this.generateGrid();
   }
 
+  // génère la grille selon la taille fixée en variable d'instance et le niveau atteint
   generateGrid() {
     let random: number;
     this.grille = [];
@@ -61,25 +64,29 @@ export class GrilleComponent implements OnInit {
   flipCards() {
     const cartesRecto = document.getElementsByClassName("carte-recto");
     for (let i = 0; i < cartesRecto.length; i++) {
-      const carte = cartesRecto[i] as HTMLElement;
-      carte.hidden = true;
+      this.switchHiddenState(cartesRecto[i] as HTMLElement);
     }
     const cartesVerso = document.getElementsByClassName("carte-verso");
     for (let i = 0; i < cartesVerso.length; i++) {
-      const carte = cartesVerso[i] as HTMLElement;
-      carte.hidden = false;
+      // // tentative de régler le problème des cartes qui disparaissent une fois cliquée ou au lancement de la grille
+      // cartesVerso[i].classList.remove("cliquee");
+      this.switchHiddenState(cartesVerso[i] as HTMLElement);
     }
   }
+
+    // (De)Masquer l'élément HTML envoyé
+    switchHiddenState(screen: HTMLElement) {
+      screen.hidden = !screen.hidden;
+    }
+  
 
   // vérifie si les cartes sont cliquées dans l'ordre croissant
   checkOrder(cell: number, event: Event) {
     let parent = (<HTMLElement>event.target).parentElement as HTMLElement;
+    this.cliquedCards[this.chain] = parent;
     // console.log(parent.classList);
     if (cell === this.chain + 1) {
-      parent.innerHTML = "";
-      // ici
-      parent.classList.remove("carte-verso")
-      parent.classList.add("carte-vide")
+      parent.classList.add("cliquee");
       this.chain++;
       if (this.chain === this.level) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
@@ -98,12 +105,10 @@ export class GrilleComponent implements OnInit {
     }
   }
 
-  // Masquer l'élément HTML envoyé
-  switchHiddenState(screen: HTMLElement) {
-    screen.hidden = !screen.hidden;
-  }
-
   nextRound() {
+    for (let index = 0; index < this.cliquedCards.length; index++) {
+      this.cliquedCards[index].classList.remove("cliquee");
+    }
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     const scorescreen = document.getElementById("score-screen") as HTMLElement;
     this.switchHiddenState(scorescreen);
