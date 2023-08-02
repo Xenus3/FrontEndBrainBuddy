@@ -14,11 +14,12 @@ export class GrilleComponent implements OnInit {
   rows = 5;
   columns = 10;
   draw = this.rows * this.columns;
-  container = document.getElementById("tirage");
-  
+  gamediv = document.getElementById("game-screen");
+  scorediv = document.getElementById("score-screen");
+
   grille = new Array(this.draw);
-  tirages : number[] = [];
-  chain : number = 0;
+  tirages: number[] = [];
+  chain: number = 0;
 
   // Lancement du jeu
   ngOnInit() {
@@ -27,17 +28,18 @@ export class GrilleComponent implements OnInit {
   }
 
   generateGrid() {
-    let random : number;
-    this.tirages= [];
+    let random: number;
+    this.tirages = [];
+    this.grille = [];
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
     }
-    for (let i = 0; i < this.level; i++){
+    for (let i = 0; i < this.level; i++) {
       do {
         random = this.randomIntFromInterval();
       } while (this.tirages.includes(random));
-      this.tirages[i] = random;  
-      this.grille[random - 1] =  i+1;
+      this.tirages[i] = random;
+      this.grille[random - 1] = i + 1;
     }
     this.chain = 0;
   }
@@ -62,18 +64,38 @@ export class GrilleComponent implements OnInit {
   }
 
   // vérifie si les cartes sont cliquées dans l'ordre croissant
-  checkOrder(cell:number, event : Event) {
-    let parent = ( <HTMLElement>event.target ).parentElement as HTMLElement;
+  checkOrder(cell: number, event: Event) {
+    let parent = (<HTMLElement>event.target).parentElement as HTMLElement;
     console.log(parent.classList);
     if (cell === this.chain + 1) {
       parent.innerHTML = "";
       parent.classList.remove("carte-verso")
       parent.classList.add("carte-vide")
       this.chain++;
+      if (this.chain === this.level) {
+        const gamescreen = document.getElementById("game-screen") as HTMLElement;
+        const scorescreen = document.getElementById("score-screen") as HTMLElement;   
+        this.switchScreen(gamescreen);
+        this.switchScreen(scorescreen);
+      }
     } else {
       this.life--;
       console.log("vie restante");
       console.log(this.life);
     }
+  }
+
+  // Masquer l'élément HTML envoyé
+  switchScreen(screen: HTMLElement) {
+    screen.hidden = !screen.hidden;
+  }
+
+  nextRound() {
+    const gamescreen = document.getElementById("game-screen") as HTMLElement;
+    const scorescreen = document.getElementById("score-screen") as HTMLElement;
+    this.switchScreen(scorescreen);
+    this.switchScreen(gamescreen);
+    this.level++;
+    this.generateGrid();
   }
 }

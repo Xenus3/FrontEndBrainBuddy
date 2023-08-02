@@ -1,4 +1,4 @@
-<div id="container">
+<div id="game-screen">
     <div *ngFor="let cell of grille; let i = index">
         <div class="carte-vide" *ngIf="cell == null">
             <p></p>
@@ -12,4 +12,10 @@
             </div>
         </div>
     </div>
+</div>
+<div id="score-screen" (click)="nextRound()" hidden>
+    <p>Victoire !</p>
+    <p>Level : {{level}}</p>
+    <p>Vies restantes : {{life}}</p>
+    <button>Continuer</button>
 </div>
