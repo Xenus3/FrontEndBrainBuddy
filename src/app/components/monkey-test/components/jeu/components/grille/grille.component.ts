@@ -29,8 +29,8 @@ export class GrilleComponent implements OnInit {
 
   generateGrid() {
     let random: number;
-    this.tirages = [];
     this.grille = [];
+    this.tirages = [];
     for (let i = 0; i < this.draw; i++) {
       this.grille[i] = null;
     }
@@ -82,6 +82,12 @@ export class GrilleComponent implements OnInit {
       this.life--;
       console.log("vie restante");
       console.log(this.life);
+      if (this.life === 0) {
+        const gamescreen = document.getElementById("game-screen") as HTMLElement;
+        const endscreen = document.getElementById("end-screen") as HTMLElement;   
+        this.switchScreen(gamescreen);
+        this.switchScreen(endscreen);
+      }
     }
   }
 
@@ -96,6 +102,7 @@ export class GrilleComponent implements OnInit {
     this.switchScreen(scorescreen);
     this.switchScreen(gamescreen);
     this.level++;
+    this.flipCards();
     this.generateGrid();
   }
 }
