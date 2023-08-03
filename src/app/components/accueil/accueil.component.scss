@@ -1,20 +1,29 @@
 // Bannière
 .banner {
-    background-blend-mode: exclusion;
-    background: url('../../../assets/images/Acueil.png'), lightgray -253.387px -179.148px / 125.75% 106.343% no-repeat ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: auto;
+    display: flex;
 }
+
+.banner div {
+    width: auto;
+}
+
+.banner img {
+    display: -webkit-box;
+    margin-left: auto;
+    width: 50vw;
+    height: auto;
+}
+
 .bannertitle {
-    width: 50%;
+    width: 70%;
     text-align: center;
-    padding: 150px 0;
+    padding: 10vw 0;
+    margin-left: 5vw;
+    margin-right:2vw
 }
 
 #first-text {
     font-size: 2.5vw;
-    margin-left: 2vw;
 }
 
 #second-text {
@@ -27,20 +36,20 @@
     justify-content: space-around;
     width: 100%;
     height: 80px;
-    background-color: #a2c0d2 ;
+    background-color: #a2c0d2;
 }
 
-.banner1 img{   
-    width: 10%;
+.banner1 img {
+    width: 100%;
     height: auto;
 }
 
 .card {
     width: 43%;
-    display:flex;
+    display: flex;
     flex-direction: row;
     height: 50px;
-    background-color:transparent ;
+    background-color: transparent;
     border: none;
     justify-content: center;
     justify-items: center;
@@ -64,7 +73,7 @@
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;
-    margin : 20px;
+    margin: 20px;
 }
 
 .gamecard {
@@ -76,7 +85,7 @@
     width: 10%;
 }
 
-.gamecard:hover{
+.gamecard:hover {
     background-color: #ffd458;
 }
 
@@ -93,36 +102,36 @@
     margin: auto 0;
 }
 
-.flou{
+.flou {
     filter: blur(2px);
 }
 
-@media (200px <= width <= 1200px) {
-    
-    .topgames{
+@media (200px <=width <=1200px) {
+
+    .topgames {
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
-    
+
     .bannertitle {
         width: 50%;
         text-align: center;
-        padding: 20px 0;         
+        padding: 20px 0;
     }
 
-    .banner1 .card p{
+    .banner1 .card p {
         visibility: hidden;
     }
 
-    .banner1 .card img{
+    .banner1 .card img {
         width: 50px;
         align-items: center;
         margin-top: 5%;
     }
 
-    .bannertitle span{
+    .bannertitle span {
         font-size: 29px;
 
     }
@@ -131,10 +140,10 @@
         width: 100%;
         height: 200px;
         background-blend-mode: exclusion;
-        background: url('../../../assets/images/Acueil.png'), lightgray -253.387px -179.148px / 125.75% 106.343% no-repeat ;
+        //background: url('../../../assets/images/Acueil.png'), lightgray -253.387px -179.148px / 125.75% 106.343% no-repeat ;
         background-size: cover;
         background-repeat: no-repeat;
-        
+
     }
 
     .banner p {
@@ -143,10 +152,10 @@
 
     .banner1 .card {
         flex-direction: column;
-        align-items: center;  
-        }     
-    
-    .gamecard{
+        align-items: center;
+    }
+
+    .gamecard {
         border: #4C85B8 solid 3px;
         border-radius: 10px;
         background-color: #d5e4fb;
@@ -154,31 +163,28 @@
         text-align: center;
         width: 45%;
         margin-bottom: 10px;
-        
+
     }
 
-    .gamecard:hover{
+    .gamecard:hover {
         background-color: #ffd458;
     }
 
     // .gamecard svg{
     //     width: 4vw;
     // }
-    
-    .option{
+
+    .option {
         flex-direction: column;
     }
 
-    .banner img{  
+    .banner img {
         width: 15%;
-        height: auto;   
+        height: auto;
     }
 
     .card p {
-    font-size: 12px;
+        font-size: 12px;
     }
-    
+
 }
-
-
-      
