@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Token } from 'src/app/entities/token';
 import { ConnexionService } from 'src/app/services/connexion/connexion.service';
-import { User } from 'src/app/entities/user';
 
 @Component({
   selector: 'app-connexion',
@@ -22,7 +22,7 @@ public inscriptionForm !: FormGroup
 
 ngOnInit(): void {
   this.connexionForm = this.formBuilder.group({
-    email: ['', Validators.required],
+    userName: ['', Validators.required],
     password: ['', Validators.required],
     
    
@@ -31,28 +31,25 @@ ngOnInit(): void {
   this.inscriptionForm = this.formBuilder.group({
     userName: ['', Validators.required],
     email:['', Validators.required],
-    password: ['', [Validators.required, Validators.pattern('(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]],
+    password: ['', [Validators.required /*Validators.pattern('(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')]*/]],
     confirmation: ['', Validators.required]
   });
 }  
 // Methode pour connecter l'utilisateur
     connexion(){
-    this.connexionService.getUsers()
-    .subscribe(res=>{
-      const user = res.filter((a:User)=>{
-        return a.email === this.connexionForm.value.email && a.password === this.connexionForm.value.password 
-      });
-      if(user){
-        alert('Login Succesful');
-        this.inscriptionForm.reset()
-      this.router.navigate(["/"])
-      }else{
-        alert("user not found")
-      }
-    },err=>{
-      alert("Something went wrong")
+    let user = this.connexionForm.value;  
+    this.connexionService.logUser(user)
+      .subscribe({
+        next: (res: Token) => {
+          alert('Login SUCCESFUL');
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this.connexionForm.reset();
+          this.router.navigate(["/"])
+      },
+      error: () => alert("Something went wrong")
     })
-  }
+    }
 // Methode pour ajouter l'utilisateur a notre base de donneés
 
     inscription(): void {
