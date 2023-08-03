@@ -1,45 +1,49 @@
 <nav>
-    <img class="logo" src="../../../assets/images/logo.png" alt="">
+    <a href="http://localhost:4200/">
+        <img class="logo" src="../../../assets/images/logo.png" alt="">
+    </a>
     <div class="mobile">
-        
         <meta name="viewport" content="width=device-width, initial-scale=1">
-  <section class="top-nav">
-    <input id="menu-toggle" type="checkbox" />
-    <label class='menu-button-container' for="menu-toggle">
-    <div class='menu-button'></div>
-  </label>
-    <ul class="menu">
-      <li>
-            <a routerLink="" (click)="clickEvent('accueil')" [ngClass]="status === 'accueil' ? 'active' : ''">
-                Accueil
-            </a>
-        </li>
-      <li>
-            <a routerLink="classement" (click)="clickEvent('classement')" [ngClass]="status === 'classement' ? 'active' : ''">
-                Classement
-            </a>
-        </li>
-      <li>
-            <a routerLink="profile" (click)="clickEvent('profile')" [ngClass]="status === 'profile' ? 'active' : ''">
-                Profile
-            </a>
-     </li>
-      <li>
-            <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
-                Jeux
-            </a>
-        </li>
-      <li>
-            <a routerLink="connexion" (click)="clickEvent('moncompte')" [ngClass]="status === 'moncompte' ? 'active' : ''">
-                Mon Compte
-            </a>
-        </li>
-    </ul>
-  </section>
-    <!-- Collapsible content -->
-  
-  
-  <!--/.Navbar-->
+        <section class="top-nav">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li>
+                    <a routerLink="" (click)="clickEvent('accueil')" [ngClass]="status === 'accueil' ? 'active' : ''">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="classement" (click)="clickEvent('classement')"
+                        [ngClass]="status === 'classement' ? 'active' : ''">
+                        Classement
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="profile" (click)="clickEvent('profile')"
+                        [ngClass]="status === 'profile' ? 'active' : ''">
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
+                        Jeux
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="connexion" (click)="clickEvent('moncompte')"
+                        [ngClass]="status === 'moncompte' ? 'active' : ''">
+                        Mon Compte
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- Collapsible content -->
+
+
+        <!--/.Navbar-->
     </div>
     <ul class="wide">
         <li>
@@ -48,7 +52,8 @@
             </a>
         </li>
         <li>
-            <a routerLink="classement" (click)="clickEvent('classement')" [ngClass]="status === 'classement' ? 'active' : ''">
+            <a routerLink="classement" (click)="clickEvent('classement')"
+                [ngClass]="status === 'classement' ? 'active' : ''">
                 Classement
             </a>
         </li>
@@ -63,7 +68,8 @@
             </a>
         </li>
         <li>
-            <a routerLink="connexion" (click)="clickEvent('moncompte')" [ngClass]="status === 'moncompte' ? 'active' : ''">
+            <a routerLink="connexion" (click)="clickEvent('moncompte')"
+                [ngClass]="status === 'moncompte' ? 'active' : ''">
                 Mon Compte
             </a>
         </li>

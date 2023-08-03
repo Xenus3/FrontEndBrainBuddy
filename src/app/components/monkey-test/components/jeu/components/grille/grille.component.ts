@@ -27,7 +27,8 @@ export class GrilleComponent implements OnInit {
     this.generateGrid();
   }
 
-  // génère la grille selon la taille fixée en variable d'instance et le niveau atteint
+  // génère la grille selon la taille (colonnes x lignes)fixée 
+  // et le tirage de "n" (level) cartes
   generateGrid() {
     let random: number;
     this.grille = [];
@@ -45,21 +46,21 @@ export class GrilleComponent implements OnInit {
     this.chain = 0;
   }
 
-  // Génére un nombre aléatoire compris entre 1 et la taille de la grille (this.draw) du jeu 
+  // Génére un nombre aléatoire entre 1 et la taille de la grille (this.draw) du jeu 
   randomIntFromInterval() {
     return Math.floor(Math.random() * this.draw + 1)
   }
 
   // retourne l'ensemble des cartes
   flipCards() {
+    // masque le reco des cartes
     const cartesRecto = document.getElementsByClassName("carte-recto");
     for (let i = 0; i < cartesRecto.length; i++) {
       this.switchHiddenState(cartesRecto[i] as HTMLElement);
     }
+    // affiche le verso des cartes
     const cartesVerso = document.getElementsByClassName("carte-verso");
     for (let i = 0; i < cartesVerso.length; i++) {
-      // // tentative de régler le problème des cartes qui disparaissent une fois cliquée ou au lancement de la grille
-      // cartesVerso[i].classList.remove("cliquee");
       this.switchHiddenState(cartesVerso[i] as HTMLElement);
     }
   }
