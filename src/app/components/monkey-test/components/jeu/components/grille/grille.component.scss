@@ -102,7 +102,9 @@ margin-right: 0.2vw;
     border: 0.11em solid #ffffff;
     background-color: #ffffff;
     margin: 0.2vw 0.2vw;
-    cursor: default;    
+    cursor: default;
+    // bloque les clics de la carte
+    pointer-events: none;    
 }
 
 

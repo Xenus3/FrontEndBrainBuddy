@@ -84,7 +84,6 @@ export class GrilleComponent implements OnInit {
   checkOrder(cell: number, event: Event) {
     let parent = (<HTMLElement>event.target).parentElement as HTMLElement;
     this.cliquedCards[this.chain] = parent;
-    // console.log(parent.classList);
     if (cell === this.chain + 1) {
       parent.classList.add("cliquee");
       this.chain++;
