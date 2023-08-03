@@ -59,45 +59,26 @@ export class TypingComponent implements OnInit {
 
   initTyping() {
     console.log("I change");
-    let characters = this.typingText.querySelectorAll("span");
-    let typedChar = this.inpField.value.split("")[this.charIndex];
-    if(this.charIndex < characters.length - 1 && this.timeLeft > 0) {
-        if(!this.isTyping) {
-            this.timer = setInterval(this.initTimer, 1000);
-            this.isTyping = 1;
-        }
-        if(typedChar == null) {
-            if(this.charIndex > 0) {
-                this.charIndex--;
-                if(characters[this.charIndex].classList.contains("incorrect")) {
-                    this.mistakes--;
-                }
-                characters[this.charIndex].classList.remove("correct", "incorrect");
-            }
-        } else {
-            if(characters[this.charIndex].innerText == typedChar) {
-                characters[this.charIndex].classList.add("correct");
-            } else {
-                this.mistakes++;
-                characters[this.charIndex].classList.add("incorrect");
-            }
-            this.charIndex++;
-        }
-        characters.forEach(span => span.classList.remove("active"));
-        characters[this.charIndex].classList.add("active");
+    this.typingText = document.querySelector(".typing-text p");
+    this.inpField = document.querySelector(".wrapper .input-field"),
 
-        let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        
-        this.wpmTag.innerText = wpm.toString();
-        this.mistakeTag.innerText = this.mistakes.toString();
-        this.cpmTag.innerText = (this.charIndex - this.mistakes).toString();
-    } else {
-        clearInterval(this.timer);
-        this.inpField.value = "";
-    }   
-    this.inpField.focus();
+    this.tryAgainBtn = document.querySelector(".content button"),
+    this.timeTag = document.querySelector(".time span b"),
+    this.mistakeTag = document.querySelector(".mistake span"),
+    this.wpmTag = document.querySelector(".wpm span"),
+    this.cpmTag = document.querySelector(".cpm span");
+    let characters = this.typingText.querySelectorAll("span");
+    let typedChar = this.inpField.value;
+    console.log(this.charIndex);
+    console.log(characters[this.charIndex]);
+    if(typedChar == characters[this.charIndex].nodeValue){
+      console.log(this.charIndex);
+      console.log("it's good");
+    }
+    console.log(typedChar );
+
   }
+  
 
   initTimer() {
     if(this.timeLeft > 0) {
@@ -133,7 +114,7 @@ export class TypingComponent implements OnInit {
     this.cpmTag = document.querySelector(".cpm span");
     console.log(this.typingText);
     this.loadParagraph();
-    //this.inpField.addEventListener("input", this.initTyping);
+    this.inpField.addEventListener("input", this.initTyping);
     //this.tryAgainBtn.addEventListener("click", this.resetGame);
     this.inpField.focus();
   }
