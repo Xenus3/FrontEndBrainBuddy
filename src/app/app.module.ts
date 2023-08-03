@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { MonkeyTestComponent } from './components/monkey-test/monkey-test.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -48,7 +48,8 @@ import { TypingComponent } from './components/typing/typing.component' ;
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

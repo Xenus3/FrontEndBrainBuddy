@@ -1,7 +1,8 @@
 <p>typing works!</p>
 
 <div class="wrapper">
-    <input type="text" class="input-field" ng-change="initTyping()"  autofocus>
+
+    <input type="text" class="input-field" [formControl]="inputForm" >
     <div class="content-box">
       <div class="typing-text">
         <p></p>
