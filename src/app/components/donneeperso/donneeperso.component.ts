@@ -1,13 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/entities/user';
+import { DonneepersoService } from 'src/app/services/donneeperso/donneeperso.service';
 
 @Component({
   selector: 'app-donneeperso',
   templateUrl: './donneeperso.component.html',
   styleUrls: ['./donneeperso.component.scss']
 })
-export class DonneepersoComponent {
+export class DonneepersoComponent implements OnInit {
 
-  donnees: User[] = [{userName: "Karim", email: "karim@gmail.com", password: "1234"}];
+  donnee: User | undefined;
+
+  constructor(private donneepersoService: DonneepersoService) {
+	  
+  }
+
+  ngOnInit(): void {
+    this.donneepersoService.getUserData()
+      .subscribe({
+        next: (res: User) => {
+          this.donnee = res;
+      },
+      error: () => alert("Something went wrong")
+    });
+
+      
+  }
+
+
 
 }

@@ -3,10 +3,10 @@
         <form action="" class="formulaire" [formGroup]="connexionForm" (ngSubmit)="connexion()">
             <h2>Se Connecter</h2>
             <div class="forelem">
-                <label for="email">E-mail:</label>
-                <input type="text" id="email-a" formControlName="email">
+                <label for="userName">E-mail:</label>
+                <input type="text" id="userName-a" formControlName="userName">
             </div>
-            <span class="alerte" *ngIf="connexionForm.controls['email'].errors?.['required']">
+            <span class="alerte" *ngIf="connexionForm.controls['userName'].errors?.['required']">
                 Champ Requis
             </span>
             <div class="forelem">
