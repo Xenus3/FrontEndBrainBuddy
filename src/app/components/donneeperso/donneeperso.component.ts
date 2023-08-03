@@ -9,7 +9,7 @@ import { DonneepersoService } from 'src/app/services/donneeperso/donneeperso.ser
 })
 export class DonneepersoComponent implements OnInit {
 
-  donnee: User | undefined;
+  donnee!: User;
 
   constructor(private donneepersoService: DonneepersoService) {
 	  
