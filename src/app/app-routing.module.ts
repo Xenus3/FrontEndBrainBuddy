@@ -37,6 +37,7 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
+   
     children: [
       {path: "donneeperso", component: DonneepersoComponent},
       {path: "historique", component: HistoriqueComponent},
