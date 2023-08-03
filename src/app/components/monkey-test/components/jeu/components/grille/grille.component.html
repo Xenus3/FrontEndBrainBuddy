@@ -75,9 +75,9 @@
     <button>Continuer</button>
 </div>
 
-<div id="error-screen" (click)="restart(life,level)" hidden>
-    <h2>Erreur !</h2>
-    <p>Level : {{level}}</p>
+<div id="lifelost-screen" (click)="restart(this.life,this.level)" hidden>
+    <h2>Level : {{level}}</h2>
+    <p>Erreur !</p>
     <p>Vies restantes : {{life}}</p>
     <button>Continuer</button>
 </div>

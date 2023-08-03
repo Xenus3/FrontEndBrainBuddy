@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class GrilleComponent implements OnInit {
 
   // Variables
-  life = 0;
+  life = 3;
   level = 4;
   rows = 5;
   columns = 10;
@@ -24,14 +24,6 @@ export class GrilleComponent implements OnInit {
 
   // Lancement du jeu
   ngOnInit() {
-    this.life = 3;
-    this.generateGrid();
-  }
-
-  // appelé lorsque le joueur décide de rejouer depuis l'écran erreur
-  restart(life:number,level:number) {
-    this.life = life;
-    this.level = level;
     this.generateGrid();
   }
 
@@ -48,8 +40,6 @@ export class GrilleComponent implements OnInit {
         random = this.randomIntFromInterval();
       } while (this.tirages.includes(random));
       this.tirages[i] = random;
-      console.log(this.tirages[i]);
-      console.log(this.tirages);
       this.grille[random - 1] = i + 1;
     }
     this.chain = 0;
@@ -95,6 +85,12 @@ export class GrilleComponent implements OnInit {
       }
     } else {
       this.life--;
+      if (this.life > 0) {
+        const gamescreen = document.getElementById("game-screen") as HTMLElement;
+        const lifelostscreen = document.getElementById("lifelost-screen") as HTMLElement;   
+        this.switchHiddenState(gamescreen);
+        this.switchHiddenState(lifelostscreen);
+      }
       if (this.life === 0) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
         const endscreen = document.getElementById("end-screen") as HTMLElement;   
@@ -104,15 +100,34 @@ export class GrilleComponent implements OnInit {
     }
   }
 
-  nextRound() {
+  // appelé lorsque le joueur décide de rejouer depuis l'écran erreur
+  restart(life:number,level:number) {
+    this.life = life;
+    this.level = level;
+    this.removeClickedClass();
+    const lifelostscreen = document.getElementById("lifelost-screen") as HTMLElement;
+    const gamescreen = document.getElementById("game-screen") as HTMLElement;
+    this.switchHiddenState(lifelostscreen);
+    this.switchHiddenState(gamescreen);
+    this.flipCards();
+    this.generateGrid();
+  }
+
+  // enlève la classe css "cliquée"
+  removeClickedClass() {
     for (let index = 0; index < this.cliquedCards.length; index++) {
       this.cliquedCards[index].classList.remove("cliquee");
     }
+  }
+
+  nextRound() {
+    this.removeClickedClass();
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     const scorescreen = document.getElementById("score-screen") as HTMLElement;
     this.switchHiddenState(scorescreen);
     this.switchHiddenState(gamescreen);
     this.level++;
+    // active le verso des cartes utilisées lors de la manche précédente
     this.flipCards();
     this.generateGrid();
   }
