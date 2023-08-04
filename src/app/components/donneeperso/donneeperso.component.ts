@@ -9,7 +9,7 @@ import { DonneepersoService } from 'src/app/services/donneeperso/donneeperso.ser
 })
 export class DonneepersoComponent implements OnInit {
 
-  donnee!: User;
+  donnee: User | undefined;
 
   constructor(private donneepersoService: DonneepersoService) {
 	  
@@ -19,6 +19,7 @@ export class DonneepersoComponent implements OnInit {
     this.donneepersoService.getUserData()
       .subscribe({
         next: (res: User) => {
+          console.log(res);
           this.donnee = res;
       },
       error: () => alert("Something went wrong")
