@@ -7,9 +7,10 @@
     }
 }
 
-#game-screen {
+#game-screen, #score-screen, #lifelost-screen, #end-screen {
     display: flex;
     width: 44vw;
+    height:30vw;
     flex-direction: column;
     margin-left: auto;
     margin-right:auto;
