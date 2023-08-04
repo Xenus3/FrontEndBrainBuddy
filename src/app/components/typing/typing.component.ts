@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {interval} from 'rxjs';
+import { Score } from 'src/app/entities/score';
+import { ScoreService } from 'src/app/services/score/score.service';
 
 @Component({
   selector: 'app-typing',
@@ -8,6 +10,10 @@ import {interval} from 'rxjs';
   styleUrls: ['./typing.component.scss']
 })
 export class TypingComponent implements OnInit {
+
+  constructor(private scoreService: ScoreService) {
+	  
+  }
 
   // Paragraphe de test
 
@@ -48,7 +54,7 @@ export class TypingComponent implements OnInit {
     this.typingText.addEventListener("click", () => this.inpField.focus());
   }
 
-  initTyping() {
+   initTyping() {
     let characters = this.typingText.querySelectorAll("span");
     let typedChar = this.inpField.value.split("")[this.charIndex];
     console.log(typedChar);
@@ -103,9 +109,6 @@ export class TypingComponent implements OnInit {
         characters[this.charIndex].classList.add("correct");
         characters[this.charIndex].setAttribute("style", "color:#56964f;");
         this.inpField.value = "";
-        let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
-        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        let score = (this.charIndex - this.mistakes) + wpm + this.timeLeft ;
 
         const timestamp = new Date();
         const level = 0;
@@ -113,10 +116,32 @@ export class TypingComponent implements OnInit {
         const mistakefinal = this.mistakes;
         const game = "typing";
 
-        console.log("Final score : " + score + " time: " 
+
+        let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+        let scoreNumber = (this.charIndex - this.mistakes) + wpm + this.timeLeft ;
+
+        console.log("Final score : " + scoreNumber + " time: " 
         + timestamp + " time left: " +timerfinal + " mistake: " +mistakefinal
         + " game: " + game);
+        this.addScore();
     }   
+  }
+
+  addScore(): void {
+    let scoreFinal: Score;
+    scoreFinal.game = "typing";
+    scoreFinal.nbMistake = this.mistakes;
+    scoreFinal.level = 1;
+    scoreFinal.timeStamp = new Date();
+    scoreFinal.timer = this.timeLeft;
+
+    this.scoreService.createScore(scoreFinal)
+      .subscribe(res=>{
+        alert('Score SUCCESFUL');
+    },err=>{
+        alert("Something went wrong")
+    })
   }
 
   initTimer() {
@@ -163,5 +188,9 @@ export class TypingComponent implements OnInit {
     });
   }
 
+}
+
+function then(log: { (...data: any[]): void; (message?: any, ...optionalParams: any[]): void; }): RequestInit {
+  throw new Error('Function not implemented.');
 }
 
