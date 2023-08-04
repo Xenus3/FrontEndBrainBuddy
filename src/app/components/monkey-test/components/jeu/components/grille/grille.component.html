@@ -70,20 +70,26 @@
 
 <div id="score-screen" (click)="nextRound()" hidden>
     <h2>Level : {{level}}</h2>
-    <p>Victoire !</p>
-    <p>Vies restantes : {{life}}</p>
-    <button>Continuer</button>
+    <div class="screen-message">
+        <p>Victoire !</p>
+        <p>Vies restantes : {{life}}</p>
+        <button class="btn">Continuer</button>
+    </div>
 </div>
 
 <div id="lifelost-screen" (click)="restart(this.life,this.level)" hidden>
     <h2>Level : {{level}}</h2>
-    <p>Erreur !</p>
-    <p>Vies restantes : {{life}}</p>
-    <button>Continuer</button>
+    <div class="screen-message">
+        <p>Oups ce n'était pas le bon !</p>
+        <p>Vies restantes : {{life}}</p>
+        <button class="btn">Continuer</button>
+    </div>
 </div>
 
 <div id="end-screen" hidden>
-    <h2>Level : {{level}}</h2>
-    <p>Votre score : XXX</p>
-    <button><a href="http://localhost:4200/monkeytest/jeu">Rejouer ?</a></button>
+    <div class="screen-message">
+        <h2>Level : {{level}}</h2>
+        <p>Votre score : XXX</p>
+        <button class="btn"><a href="http://localhost:4200/monkeytest/jeu">Rejouer ?</a></button>
+    </div>
 </div>
