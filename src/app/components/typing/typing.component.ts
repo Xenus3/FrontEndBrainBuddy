@@ -15,7 +15,7 @@ export class TypingComponent implements OnInit {
     "ac orci amet nulla facilisi morbi tempus",
     ];
 
-  // value
+  // values
   typingText!: HTMLInputElement  | null;
   inpField!: HTMLInputElement  | null;
 
@@ -34,7 +34,7 @@ export class TypingComponent implements OnInit {
    mistakes = 0;
    isTyping: any;
 
-   // Load le paragraphe dans la case
+   // Load le paragraphe dans la case 
 
   loadParagraph() {
     const ranIndex = Math.floor(Math.random() * this.paragraphs.length);
@@ -103,7 +103,19 @@ export class TypingComponent implements OnInit {
         characters[this.charIndex].classList.add("correct");
         characters[this.charIndex].setAttribute("style", "color:#56964f;");
         this.inpField.value = "";
-        // send score
+        let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+        let score = (this.charIndex - this.mistakes) + wpm + this.timeLeft ;
+
+        const timestamp = new Date();
+        const level = 0;
+        const timerfinal = this.timeLeft;
+        const mistakefinal = this.mistakes;
+        const game = "typing";
+
+        console.log("Final score : " + score + " time: " 
+        + timestamp + " time left: " +timerfinal + " mistake: " +mistakefinal
+        + " game: " + game);
     }   
   }
 
