@@ -19,11 +19,11 @@ export class ConnexionService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa(`${user.userName}:${user.password}`)
+        // 'Authorization': 'Basic ' + btoa(`${user.userName}:${user.password}`)
       })
     };
 
-    return this.httpClient.post<Token>(this.loginUrl, null, httpOptions);
+    return this.httpClient.post<Token>(this.loginUrl, { userName: user.userName, password: user.password}, httpOptions);
   }
 
   createUser(user: Inscription): Observable<Inscription>  {

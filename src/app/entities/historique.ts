@@ -1,5 +1,5 @@
 export interface Historique {
     nom: string,
-    date: string,
-    meilleurscore: string
+    date: Date,
+    meilleurscore: number
 }
