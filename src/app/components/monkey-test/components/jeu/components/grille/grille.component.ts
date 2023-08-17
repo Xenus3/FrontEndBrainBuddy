@@ -11,6 +11,7 @@ export class GrilleComponent implements OnInit {
   // Variables
   life = 3;
   level = 4;
+  score = 0;
   rows = 5;
   columns = 10;
   draw = this.rows * this.columns;
@@ -21,10 +22,17 @@ export class GrilleComponent implements OnInit {
   tirages: number[] = [];
   chain: number = 0;
   cliquedCards: HTMLElement[] = [];
+  isPlaying: boolean = false;
+
+  // Timer
+  timer: number = 0; // Set the initial countup value (in seconds)
+  interval: any;
 
   // Lancement du jeu
   ngOnInit() {
     this.generateGrid();
+    this.timer = 0;
+    this.startCountup();
   }
 
   // génère la grille selon la taille (colonnes x lignes)fixée 
@@ -46,6 +54,17 @@ export class GrilleComponent implements OnInit {
     this.chain = 0;
   }
 
+  // Launch Timer
+  startCountup() {
+    this.interval = setInterval(() => {
+      this.timer++;
+    }, 1000); // Increment the countup every 1 second (1000 ms)
+  }
+
+  // Stop Timer
+    
+  
+
   // Génére un nombre aléatoire entre 1 et la taille de la grille (this.draw) du jeu 
   randomIntFromInterval() {
     return Math.floor(Math.random() * this.draw + 1)
@@ -65,11 +84,10 @@ export class GrilleComponent implements OnInit {
     }
   }
 
-    // (De)Masquer l'élément HTML envoyé
-    switchHiddenState(screen: HTMLElement) {
-      screen.hidden = !screen.hidden;
-    }
-  
+  // (De)Masquer l'élément HTML envoyé
+  switchHiddenState(screen: HTMLElement) {
+    screen.hidden = !screen.hidden;
+  }
 
   // vérifie si les cartes sont cliquées dans l'ordre croissant
   checkOrder(cell: number, event: Event) {
@@ -79,6 +97,7 @@ export class GrilleComponent implements OnInit {
       parent.classList.add("cliquee");
       this.chain++;
       if (this.chain === this.level) {
+        this.score = Math.floor(this.score + this.level * 100 - this.timer * this.level * 30 /100);
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
         const scorescreen = document.getElementById("score-screen") as HTMLElement;   
         this.switchHiddenState(gamescreen);
@@ -110,8 +129,10 @@ export class GrilleComponent implements OnInit {
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     this.switchHiddenState(lifelostscreen);
     this.switchHiddenState(gamescreen);
-    this.flipCards();
-    this.generateGrid();
+    this.gamereboot();
+    // this.flipCards();
+    // this.timer=0;
+    // this.generateGrid();
   }
 
   // enlève la classe css "cliquée"
@@ -121,6 +142,12 @@ export class GrilleComponent implements OnInit {
     }
   }
 
+  gamereboot() {
+    this.flipCards();
+    this.timer=0;
+    this.generateGrid();
+  }
+
   nextRound() {
     this.removeClickedClass();
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
@@ -128,8 +155,10 @@ export class GrilleComponent implements OnInit {
     this.switchHiddenState(scorescreen);
     this.switchHiddenState(gamescreen);
     this.level++;
-    // active le verso des cartes utilisées lors de la manche précédente
-    this.flipCards();
-    this.generateGrid();
+    this.gamereboot();
+    //// active le verso des cartes utilisées lors de la manche précédente
+    // this.flipCards();
+    // this.timer=0;
+    // this.generateGrid();
   }
 }

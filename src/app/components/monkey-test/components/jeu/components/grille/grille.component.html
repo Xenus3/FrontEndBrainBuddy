@@ -31,7 +31,7 @@
             <p>Level : {{ level }}</p>
         </div>
 
-        <!-- <div class="icone">
+        <div class="icone">
             <svg width="1.6vw" height="1.6vw" viewBox="-2 0 30 30" version="1.1" id="svg1"
                 sodipodi:docname="timer-svgrepo-com(1).svg" inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -48,8 +48,8 @@
                     </g>
                 </g>
             </svg>
-            <p>Timer : {{ life }}</p>
-        </div> -->
+            <p>Timer : {{ timer }}</p>
+        </div>
     </div>
     <div id="cartes">
         <div *ngFor="let cell of grille; let i = index">
@@ -72,6 +72,7 @@
     <h2>Level : {{level}}</h2>
     <div class="screen-message">
         <p>Victoire !</p>
+        <p>Votre score : {{score}}</p>
         <p>Vies restantes : {{life}}</p>
         <button class="btn">Continuer</button>
     </div>
@@ -81,6 +82,7 @@
     <h2>Level : {{level}}</h2>
     <div class="screen-message">
         <p>Oups ce n'était pas le bon !</p>
+        <p>Votre score : {{score}}</p>
         <p>Vies restantes : {{life}}</p>
         <button class="btn">Continuer</button>
     </div>
@@ -89,7 +91,9 @@
 <div id="end-screen" hidden>
     <div class="screen-message">
         <h2>Level : {{level}}</h2>
-        <p>Votre score : XXX</p>
-        <button class="btn"><a href="http://localhost:4200/monkeytest/jeu">Rejouer ?</a></button>
+        <p>Votre score : {{score}}</p>
+        <a class="rejouer"href="http://localhost:4200/monkeytest/jeu">
+            Rejouer ?
+        </a>
     </div>
 </div>

@@ -44,14 +44,44 @@
     color: #FFD458;
 }
 
-.btn:hover a {
-    color: #151730;
-}
-
 .btn:hover {
     color: #151730;
     background-color: #488ECB;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rejouer {
+    display: flex;
+    text-align: center;
+    background-color: #151730;
+    border: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding: 10px 50px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #FFD458;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.rejouer:hover {
+    color: #151730;
+    background-color: #488ECB;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+// active
+.rejouer:active {
+    color: #151730;
+    background-color: #FFD458;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rejouer a:active {
+    color: #151730;
 }
 
 // icones
