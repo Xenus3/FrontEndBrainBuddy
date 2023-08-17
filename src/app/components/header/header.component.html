@@ -22,6 +22,11 @@
                     </a>
                 </li>
                 <li>
+                    <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
+                        Jeux
+                    </a>
+                </li>
+                <li>
                     <a routerLink="classement" (click)="clickEvent('classement')"
                         [ngClass]="status === 'classement' ? 'active' : ''">
                         Classement
@@ -30,12 +35,7 @@
                 <li>
                     <a routerLink="profile" (click)="clickEvent('profile')"
                         [ngClass]="status === 'profile' ? 'active' : ''">
-                        Profile
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
-                        Jeux
+                        Profil
                     </a>
                 </li>
                 <li>
@@ -58,6 +58,11 @@
             </a>
         </li>
         <li>
+            <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
+                Jeux
+            </a>
+        </li>
+        <li>
             <a routerLink="classement" (click)="clickEvent('classement')"
                 [ngClass]="status === 'classement' ? 'active' : ''">
                 Classement
@@ -65,12 +70,7 @@
         </li>
         <li>
             <a routerLink="profile" (click)="clickEvent('profile')" [ngClass]="status === 'profile' ? 'active' : ''">
-                Profile
-            </a>
-        </li>
-        <li>
-            <a routerLink="jeux" (click)="clickEvent('jeux')" [ngClass]="status === 'jeux' ? 'active' : ''">
-                Jeux
+                Profil
             </a>
         </li>
         <li>
