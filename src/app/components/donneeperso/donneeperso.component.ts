@@ -28,6 +28,17 @@ export class DonneepersoComponent implements OnInit {
       
   }
 
+  delete(): void {
+    this.donneepersoService.deleteUser()
+    .subscribe({
+      next: (res: User) => {
+        console.log(res.userName+" a ete supprimé");
+        
+    },
+    error: () => alert("Something went wrong")
+  });
+  }
+
 
 
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Trophee } from 'src/app/entities/trophee';
+import { Usertrophee } from 'src/app/entities/usertrophee';
 import { TrophesService } from 'src/app/services/trophes/trophes.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { TrophesService } from 'src/app/services/trophes/trophes.service';
   templateUrl: './trophes.component.html',
   styleUrls: ['./trophes.component.scss']
 })
-export class TrophesComponent {
+export class TrophesComponent implements OnInit {
 
   trophees: Trophee[] = [];
   
@@ -18,11 +19,11 @@ export class TrophesComponent {
   ngOnInit(): void {
     this.trophesService.getUserTrophies()
       .subscribe({
-        next: (res: Trophee[]) => {
+        next: (res: Usertrophee[]) => {
           console.log(res);
          res.forEach(element => {
             
-            let trophy = {trophee: element.trophee, description: element.description, date: element.date, rarite: element.rarite};
+            let trophy = {trophee: element.trophy.description, description: element.trophy.description, date: element.trophy.date, rarite: element.trophy.rarite};
             this.trophees.push(trophy);
 
          });

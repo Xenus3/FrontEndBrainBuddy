@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Trophee } from 'src/app/entities/trophee';
+import { Usertrophee } from 'src/app/entities/usertrophee';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class TrophesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUserTrophies(): Observable<Trophee[]> {
+  getUserTrophies(): Observable<Usertrophee[]> {
     let headers;
     if (localStorage.getItem('token')) {
       let token = localStorage.getItem('token');
@@ -20,7 +21,7 @@ export class TrophesService {
       
       }
 
-    return this.httpClient.get<Trophee[]>(this.userHistoryUrl, { headers });
+    return this.httpClient.get<Usertrophee[]>(this.userHistoryUrl, { headers });
     
   }
 }
