@@ -7,9 +7,10 @@
     }
 }
 
-#game-screen {
+#game-screen, #score-screen, #lifelost-screen, #end-screen {
     display: flex;
     width: 44vw;
+    height:30vw;
     flex-direction: column;
     margin-left: auto;
     margin-right:auto;
@@ -20,6 +21,37 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.screen-message {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+.btn {
+    background-color: #151730;
+    width:15vw;
+    border: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding: 10px 50px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #FFD458;
+}
+
+.btn:hover a {
+    color: #151730;
+}
+
+.btn:hover {
+    color: #151730;
+    background-color: #488ECB;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 // icones
