@@ -200,9 +200,16 @@ p,li {
 // fin Carousel
 
 // bouton Jouer
+
+#button {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
+
 .jouer {
     display: flex;
-    justify-content: center;
+    text-align: center;
     background-color: #151730;
     width:20px;
     border: auto;
@@ -214,9 +221,11 @@ p,li {
     cursor: pointer;
 }
 
-.jouer a {
+a.jouer {
     color: #FFD458;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 .jouer a:hover {
