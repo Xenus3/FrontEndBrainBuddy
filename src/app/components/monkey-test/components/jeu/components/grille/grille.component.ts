@@ -97,7 +97,7 @@ export class GrilleComponent implements OnInit {
       parent.classList.add("cliquee");
       this.chain++;
       if (this.chain === this.level) {
-        this.score = Math.floor(this.score + this.level * 100 - this.timer * this.level * 30 /100);
+        this.score = Math.floor(this.score + this.level * 100 - this.timer * this.level * 70 /100);
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
         const scorescreen = document.getElementById("score-screen") as HTMLElement;   
         this.switchHiddenState(gamescreen);
