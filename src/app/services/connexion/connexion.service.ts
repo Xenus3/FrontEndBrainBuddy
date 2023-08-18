@@ -13,6 +13,7 @@ export class ConnexionService {
   connexionUrl: string = 'http://localhost:8080/users';
   loginUrl: string = 'http://localhost:8080/token';
 
+
   constructor(private httpClient: HttpClient) { }
 
   logUser(user: User): Observable<Token> {
@@ -36,4 +37,6 @@ export class ConnexionService {
     
 	  return this.httpClient.get<User[]>(this.connexionUrl);
   }
+
+  
 }

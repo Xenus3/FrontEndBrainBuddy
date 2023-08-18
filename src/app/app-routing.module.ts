@@ -11,6 +11,7 @@ import { MonkeyTestComponent } from './components/monkey-test/monkey-test.compon
 import { JeuComponent } from './components/monkey-test/components/jeu/jeu.component';
 import { TutorielComponent } from './components/monkey-test/components/tutoriel/tutoriel.component';
 import { ViewGraphComponent } from './components/view-graph/view-graph.component';
+import { ModifierdpComponent } from './components/modifierdp/modifierdp.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
       {path: "donneeperso", component: DonneepersoComponent},
       {path: "historique", component: HistoriqueComponent},
       {path: "trophes", component: TrophesComponent},
+      {path: "modifierdp", component: ModifierdpComponent},
     ]
   },{
     path: "classement",

@@ -1,0 +1,36 @@
+<div class="form2">
+    <form action="" class="formulaire" id="form3" [formGroup]="modifierForm" (ngSubmit)="modifier()">
+        <h2>S'inscrire</h2>
+        <div class="forelem">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" formControlName="userName">
+            
+        </div>
+        <span class="alerte" *ngIf="modifierForm.controls['userName'].errors?.['required']">
+            Champ Requis
+        </span>
+        <div class="forelem">
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <span class="alerte" *ngIf="modifierForm.controls['email'].errors?.['required']">
+            Champ Requis
+        </span>
+        <div class="forelem">
+            <label for="mdp">Mot de Passe:</label>
+            <input type="password" id="mdp" formControlName="password">
+        </div>
+        <span class="alerte" *ngIf="modifierForm.controls['password'].errors?.['required']">
+            doit contenir 8 characteres, 1 majuscule, 1 chiffre et 1 charactere speciale
+        </span>
+        <div class="forelem">
+            <label for="email">Confirmation:</label>
+            <input type="password" id="conf" formControlName="confirmation">
+        </div>
+        <span class="alerte" *ngIf="modifierForm.controls['confirmation'].errors?.['required']">
+            Champ Requis
+        </span>
+        <button type="submit" [disabled]="!modifierForm.valid">Modifier</button>
+    </form>
+
+</div>

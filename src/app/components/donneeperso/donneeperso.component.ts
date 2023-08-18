@@ -37,8 +37,11 @@ export class DonneepersoComponent implements OnInit {
     },
     error: () => alert("Something went wrong")
   });
+  
   }
 
-
+logout(): void {
+  window.localStorage.removeItem("token")
+}
 
 }
