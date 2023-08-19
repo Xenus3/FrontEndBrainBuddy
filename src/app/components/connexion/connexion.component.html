@@ -3,7 +3,7 @@
         <form action="" class="formulaire" [formGroup]="connexionForm" (ngSubmit)="connexion()">
             <h2>Se Connecter</h2>
             <div class="forelem">
-                <label for="userName">E-mail:</label>
+                <label for="userName">Nom:</label>
                 <input type="text" id="userName-a" formControlName="userName">
             </div>
             <span class="alerte" *ngIf="connexionForm.controls['userName'].errors?.['required']">

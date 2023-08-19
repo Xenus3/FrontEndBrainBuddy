@@ -6,7 +6,9 @@
             <li> Email: {{ donnee?.email }} </li> 
         </ul>
     </div>
-    <button routerLink="../modifierdp">Modifier Donneés</button>
-    <button (click)="delete()">Supprimer Compte</button>
-    <button (click)="logout()">Se Deconnecter</button>
+    <div class="buttons">
+        <button routerLink="../modifierdp">Modifier Donneés</button>
+        <button (click)="delete()">Supprimer Compte</button>
+        <button (click)="logout()">Se Deconnecter</button>
+    </div>
 </div>

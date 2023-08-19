@@ -18,6 +18,10 @@ app-profilemenu {
     width: 70%;
 }
 
+.router-outlet {
+    width: 100%;
+}
+
 @media  screen and (max-width: 1080px) {
 
     app-profilemenu {

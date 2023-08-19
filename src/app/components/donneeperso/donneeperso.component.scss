@@ -31,6 +31,12 @@ button {
     padding-left: 100px;
 }
 
+.buttons {
+    display:flex;
+    height: 300px;
+    justify-content: center;
+}
+
 @media screen and (max-width: 755px) {
   
     .donnee img {
