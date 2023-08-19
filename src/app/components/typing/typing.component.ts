@@ -18,7 +18,12 @@ export class TypingComponent implements OnInit {
   // Paragraphe de test
 
   paragraphs = [
-    "ac orci amet nulla facilisi morbi tempus",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt nulla vitae luctus dignissim. Nunc vel arcu odio. In sit amet varius mi. Cras fermentum fermentum nunc at eleifend. Morbi fermentum mi enim, quis vehicula arcu convallis rutrum. Pellentesque ut justo vitae sapien ultricies rutrum id et mi.",
+    "Pellentesque congue urna est, in molestie justo sodales nec. Cras eu augue vehicula turpis commodo cursus. Mauris quis nisl ut erat malesuada consequat. Mauris pretium, arcu a imperdiet condimentum, dui odio varius orci, nec accumsan lectus mi eget neque. Suspendisse mollis gravida sem non porttitor. ",
+    "Aenean porttitor dui sit amet imperdiet gravida. Nullam elementum augue et orci tincidunt sagittis. Donec congue tristique ligula sed condimentum. Proin a dolor justo. Nunc feugiat erat vitae orci fringilla, ac dictum tortor luctus. Praesent elit quam, fringilla sollicitudin sollicitudin eu, pulvinar sit amet felis.",
+    "In dictum ligula at semper ultrices. Aliquam placerat lobortis semper. Ut ac eleifend augue. Donec iaculis non ligula sed interdum. Nullam imperdiet, dui eget laoreet rutrum, nibh eros ornare sem, quis pellentesque arcu est et elit. Mauris fermentum metus at eros iaculis viverra. Morbi scelerisque nunc justo, non eleifend neque tincidunt sit amet.",
+    "Pellentesque cursus nisi eget purus commodo, at vestibulum ligula vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque pulvinar sapien ut quam maximus laoreet. Suspendisse dapibus, libero at ultrices lobortis, elit lorem consequat velit, eu ullamcorper elit orci in lacus. Vestibulum venenatis pellentesque sem, a commodo libero euismod eu.",
+    "In dictum ligula at semper ultrices. Aliquam placerat lobortis semper. Ut ac eleifend augue."
     ];
 
   // values
