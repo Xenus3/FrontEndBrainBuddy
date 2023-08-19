@@ -32,7 +32,7 @@
                         Classement
                     </a>
                 </li>
-                <li>
+                <li ng-show="isAuthanticated">
                     <a routerLink="profile" (click)="clickEvent('profile')"
                         [ngClass]="status === 'profile' ? 'active' : ''">
                         Profil

@@ -13,6 +13,7 @@ export class ConnexionComponent implements OnInit {
 
 public connexionForm !: FormGroup
 public inscriptionForm !: FormGroup
+private isAuthanticated: Boolean = false;
 
   constructor(private connexionService: ConnexionService, private formBuilder: FormBuilder, private router: Router) {
 	  

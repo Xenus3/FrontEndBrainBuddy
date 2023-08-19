@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  status: string = "accueil";
+  status: string = "";
 
   
 clickEvent(nom: string): void {
