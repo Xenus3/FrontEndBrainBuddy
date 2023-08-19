@@ -12,6 +12,7 @@ import { JeuComponent } from './components/monkey-test/components/jeu/jeu.compon
 import { TutorielComponent } from './components/monkey-test/components/tutoriel/tutoriel.component';
 import { ViewGraphComponent } from './components/view-graph/view-graph.component';
 import { ModifierdpComponent } from './components/modifierdp/modifierdp.component';
+import { TypingComponent } from './components/typing/typing.component' ;
 
 
 const routes: Routes = [
@@ -48,6 +49,9 @@ const routes: Routes = [
   },{
     path: "classement",
     component: ViewGraphComponent
+  },{
+    path: "typing",
+    component: TypingComponent
   }
  
  

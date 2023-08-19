@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { MonkeyTestComponent } from './components/monkey-test/monkey-test.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -21,6 +21,7 @@ import { JeuComponent } from './components/monkey-test/components/jeu/jeu.compon
 import { GrilleComponent } from './components/monkey-test/components/jeu/components/grille/grille.component';
 import { ViewGraphComponent } from './components/view-graph/view-graph.component';
 import { ModifierdpComponent } from './components/modifierdp/modifierdp.component' ;
+import { TypingComponent } from './components/typing/typing.component' ;
 
 
 
@@ -41,17 +42,16 @@ import { ModifierdpComponent } from './components/modifierdp/modifierdp.componen
     JeuComponent,
     GrilleComponent,
     ViewGraphComponent,
-    ModifierdpComponent
-   
- 
- 
+    ModifierdpComponent,
+    TypingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
