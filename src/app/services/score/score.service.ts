@@ -13,11 +13,20 @@ export class ScoreService {
   constructor(private httpClient: HttpClient) { }
 
   createScore(score: Score): Observable<Score>  {
-    return this.httpClient.post<Score>(this.connexionUrl, score);
+
+    let headers;
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token');
+      headers = { 'Authorization': 'Bearer '+token }
+      
+      }
+
+    return this.httpClient.post<Score>(this.connexionUrl, score, { headers });
   }
   
   getScores(): Observable<Score[]> {
 	  return this.httpClient.get<Score[]>(this.connexionUrl);
   }
+
 
 }

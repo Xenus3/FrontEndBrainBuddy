@@ -5,6 +5,5 @@ export interface Score {
     nbMistake: number,
     timeStamp: Date,
     level: number,
-    timer: number,
-    game: string
+    timer: number
 }
