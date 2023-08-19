@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import {interval} from 'rxjs';
 import { Score } from 'src/app/entities/score';
 import { ScoreService } from 'src/app/services/score/score.service';
+
 
 @Component({
   selector: 'app-typing',
@@ -10,6 +11,8 @@ import { ScoreService } from 'src/app/services/score/score.service';
   styleUrls: ['./typing.component.scss']
 })
 export class TypingComponent implements OnInit {
+
+  public connexionForm !: FormGroup
 
   constructor(private scoreService: ScoreService) {
 	  
