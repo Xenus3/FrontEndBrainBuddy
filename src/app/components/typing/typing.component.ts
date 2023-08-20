@@ -155,7 +155,7 @@ export class TypingComponent implements OnInit {
 
     this.scoreService.createScore(score)
       .subscribe(res=>{
-        alert('Score SUCCESFUL');
+        alert('Score register');
     },err=>{ 
         alert("Something went wrong")
     })
