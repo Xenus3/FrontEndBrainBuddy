@@ -151,7 +151,10 @@ export class TypingComponent implements OnInit {
       description:"",
       instructions:""
     };
-    let score = {games: game, nbMistake: this.mistakes, level: 1, timeStamp: new Date(), timer: this.timeLeft};
+    let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
+        wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+    let scoreNumber = (this.charIndex - this.mistakes) + wpm + this.timeLeft ;
+    let score = {games: game, nbMistake: this.mistakes, level: 1, timeStamp: new Date(), timer: scoreNumber};
 
     this.scoreService.createScore(score)
       .subscribe(res=>{

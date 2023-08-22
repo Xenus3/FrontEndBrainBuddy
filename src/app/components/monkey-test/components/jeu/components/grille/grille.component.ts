@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Game } from 'src/app/entities/game';
+import { ScoreService } from 'src/app/services/score/score.service';
 
 @Component({
   selector: 'app-grille',
@@ -33,6 +35,10 @@ export class GrilleComponent implements OnInit {
     this.generateGrid();
     this.timer = 0;
     this.startCountup();
+  }
+
+  constructor(private scoreService: ScoreService) {
+	  
   }
 
   // génère la grille selon la taille (colonnes x lignes)fixée 
@@ -116,10 +122,27 @@ export class GrilleComponent implements OnInit {
         const endscreen = document.getElementById("end-screen") as HTMLElement;   
         this.switchHiddenState(gamescreen);
         this.switchHiddenState(endscreen);
+        this.sendScore();
       }
     }
   }
 
+  sendScore(){
+    let game : Game ;
+    game = {
+      name: "MonkeyTest",
+      description:"",
+      instructions:""
+    };
+    let score = {games: game, nbMistake: 3, level: 1, timeStamp: new Date(), timer: this.score};
+
+    this.scoreService.createScore(score)
+      .subscribe(res=>{
+        alert('Score register');
+    },err=>{ 
+        alert("Something went wrong")
+    })
+  }
   // appelé lorsque le joueur décide de rejouer depuis l'écran erreur
   restart(life:number,level:number) {
     this.life = life;
@@ -129,6 +152,7 @@ export class GrilleComponent implements OnInit {
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     this.switchHiddenState(lifelostscreen);
     this.switchHiddenState(gamescreen);
+    
     this.gamereboot();
     // this.flipCards();
     // this.timer=0;
