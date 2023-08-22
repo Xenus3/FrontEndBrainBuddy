@@ -16,17 +16,17 @@ export class TypingComponent implements OnInit {
   public connexionForm !: FormGroup
 
   constructor(private scoreService: ScoreService) {
-	  
+
   }
 
   // Paragraphe de test
 
   paragraphs = [
     "Lorem ipsum dolor sit amet",
-    "Pellentesque congue urna est, in molestie justo sodales nec. Cras eu augue vehicula turpis commodo cursus. Mauris quis nisl ut erat malesuada consequat. Mauris pretium, arcu a imperdiet condimentum, dui odio varius orci, nec accumsan lectus mi eget neque. Suspendisse mollis gravida sem non porttitor. ",
-    "Aenean porttitor dui sit amet imperdiet gravida. Nullam elementum augue et orci tincidunt sagittis. Donec congue tristique ligula sed condimentum. Proin a dolor justo. Nunc feugiat erat vitae orci fringilla, ac dictum tortor luctus. Praesent elit quam, fringilla sollicitudin sollicitudin eu, pulvinar sit amet felis.",
-    "In dictum ligula at semper ultrices. Aliquam placerat lobortis semper. Ut ac eleifend augue. Donec iaculis non ligula sed interdum. Nullam imperdiet, dui eget laoreet rutrum, nibh eros ornare sem, quis pellentesque arcu est et elit. Mauris fermentum metus at eros iaculis viverra. Morbi scelerisque nunc justo, non eleifend neque tincidunt sit amet.",
-    "Pellentesque cursus nisi eget purus commodo, at vestibulum ligula vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque pulvinar sapien ut quam maximus laoreet. Suspendisse dapibus, libero at ultrices lobortis, elit lorem consequat velit, eu ullamcorper elit orci in lacus. Vestibulum venenatis pellentesque sem, a commodo libero euismod eu.",
+    "Pellentesque congue urna est, in molestie justo sodales nec. Cras eu augue vehicula turpis commodo cursus. Mauris quis nisl ut erat malesuada consequat. ",
+    "Aenean porttitor dui sit amet imperdiet gravida. Nullam elementum augue et orci tincidunt sagittis. ",
+    "In dictum ligula at semper ultrices. Aliquam placerat lobortis semper. Ut ac eleifend augue.",
+    "Pellentesque cursus nisi eget purus commodo, at vestibulum ligula vehicula. ",
     "In dictum ligula at semper ultrices."
     ];
 
@@ -49,7 +49,7 @@ export class TypingComponent implements OnInit {
    mistakes = 0;
    isTyping: any;
 
-   // Load le paragraphe dans la case 
+   // Load le paragraphe dans la case
 
   loadParagraph() {
     const ranIndex = Math.floor(Math.random() * this.paragraphs.length);
@@ -109,7 +109,7 @@ export class TypingComponent implements OnInit {
 
         let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
-        
+
         this.wpmTag.innerText = wpm.toString();
         this.mistakeTag.innerText = this.mistakes.toString();
         this.cpmTag.innerText = (this.charIndex - this.mistakes).toString();
@@ -130,11 +130,11 @@ export class TypingComponent implements OnInit {
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
         let scoreNumber = (this.charIndex - this.mistakes) + wpm + this.timeLeft ;
 
-        console.log("Final score : " + scoreNumber + " time: " 
+        console.log("Final score : " + scoreNumber + " time: "
         + timestamp + " time left: " +timerfinal + " mistake: " +mistakefinal
         + " game: " + game);
         this.addScore();
-    }   
+    }
   }
 
   addScore(): void {
@@ -159,7 +159,7 @@ export class TypingComponent implements OnInit {
     this.scoreService.createScore(score)
       .subscribe(res=>{
         alert('Score register');
-    },err=>{ 
+    },err=>{
         alert("Something went wrong")
     })
   }
@@ -167,7 +167,7 @@ export class TypingComponent implements OnInit {
   initTimer() {
     console.log(this.timeLeft);
     if(this.timeLeft > 0) {
-      
+
         this.timeLeft--;
         this.timeTag.innerText = this.timeLeft.toString();
         let wpm = Math.round(((this.charIndex - this.mistakes)  / 5) / (this.maxTime - this.timeLeft) * 60);
