@@ -38,10 +38,10 @@ export class GrilleComponent implements OnInit {
   }
 
   constructor(private scoreService: ScoreService) {
-	  
+
   }
 
-  // génère la grille selon la taille (colonnes x lignes)fixée 
+  // génère la grille selon la taille (colonnes x lignes)fixée
   // et le tirage de "n" (level) cartes
   generateGrid() {
     let random: number;
@@ -68,10 +68,10 @@ export class GrilleComponent implements OnInit {
   }
 
   // Stop Timer
-    
-  
 
-  // Génére un nombre aléatoire entre 1 et la taille de la grille (this.draw) du jeu 
+
+
+  // Génére un nombre aléatoire entre 1 et la taille de la grille (this.draw) du jeu
   randomIntFromInterval() {
     return Math.floor(Math.random() * this.draw + 1)
   }
@@ -105,7 +105,7 @@ export class GrilleComponent implements OnInit {
       if (this.chain === this.level) {
         this.score = Math.floor(this.score + this.level * 100 - this.timer * this.level * 70 /100);
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
-        const scorescreen = document.getElementById("score-screen") as HTMLElement;   
+        const scorescreen = document.getElementById("score-screen") as HTMLElement;
         this.switchHiddenState(gamescreen);
         this.switchHiddenState(scorescreen);
       }
@@ -113,13 +113,13 @@ export class GrilleComponent implements OnInit {
       this.life--;
       if (this.life > 0) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
-        const lifelostscreen = document.getElementById("lifelost-screen") as HTMLElement;   
+        const lifelostscreen = document.getElementById("lifelost-screen") as HTMLElement;
         this.switchHiddenState(gamescreen);
         this.switchHiddenState(lifelostscreen);
       }
       if (this.life === 0) {
         const gamescreen = document.getElementById("game-screen") as HTMLElement;
-        const endscreen = document.getElementById("end-screen") as HTMLElement;   
+        const endscreen = document.getElementById("end-screen") as HTMLElement;
         this.switchHiddenState(gamescreen);
         this.switchHiddenState(endscreen);
         this.sendScore();
@@ -134,13 +134,13 @@ export class GrilleComponent implements OnInit {
       description:"",
       instructions:""
     };
-    let score = {games: game, nbMistake: 3, level: 1, timeStamp: new Date(), timer: this.score};
+    let score = {games: game, nbMistake: 3, level: this.level, timeStamp: new Date(), timer: this.score};
 
     this.scoreService.createScore(score)
       .subscribe(res=>{
         alert('Score register');
-    },err=>{ 
-        alert("Something went wrong")
+    },err=>{
+        alert("Something went wrong");
     })
   }
   // appelé lorsque le joueur décide de rejouer depuis l'écran erreur
@@ -152,7 +152,7 @@ export class GrilleComponent implements OnInit {
     const gamescreen = document.getElementById("game-screen") as HTMLElement;
     this.switchHiddenState(lifelostscreen);
     this.switchHiddenState(gamescreen);
-    
+
     this.gamereboot();
     // this.flipCards();
     // this.timer=0;
